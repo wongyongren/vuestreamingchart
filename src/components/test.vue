@@ -1,12 +1,10 @@
 <template>
   <apexchart ref="realtimeChart" type="line" height="200" :options="chartOptions" :series="series" />
 </template>
+
 <script>
-//import { Line } from "vue-chartjs";
-
-import "chartjs-plugin-streaming";
-
 export default {
+  name: 'ApexLine',
   data () {
     return {
       series: [{
@@ -18,7 +16,7 @@ export default {
         animations: {
           enabled: true,
           easing: 'easeinout',
-          speed: 100
+          speed: 1000
         },
         chart: {
           height: 350,
@@ -71,25 +69,25 @@ export default {
       }
     }
   },
-  mounted() {
-    this.setDataLineChart();
+  mounted () {
+    this.setDataLineChart()
   },
   methods: {
-    getRandomArbitrary () {
-      return Math.floor(Math.random() * 10)
+    getRandomArbitrary (min, max) {
+      return Math.floor(Math.random() * 99)
     },
     setDataLineChart () {
       setInterval(() => {
         this.series[0].data.splice(0, 1)
-        this.series[0].data.push(this.getRandomArbitrary(0, 10))
+        this.series[0].data.push(this.getRandomArbitrary(0, 99))
         this.updateSeriesLine()
-      }, 1000)
+      }, 3000)
     },
     updateSeriesLine () {
       this.$refs.realtimeChart.updateSeries([{
         data: this.series[0].data
       }], false, true)
     }
-  },
-};
+  }
+}
 </script>
