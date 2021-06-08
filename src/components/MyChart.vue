@@ -76,12 +76,12 @@ export default {
   },
   methods: {
     getRandomArbitrary () {
-      return Math.floor(Math.random() * 10)
+      return Math.floor(Math.random() * 99)
     },
     setDataLineChart () {
       setInterval(() => {
         this.series[0].data.splice(0, 1)
-        this.series[0].data.push(this.getRandomArbitrary(0, 10))
+        this.series[0].data.push(this.getRandomArbitrary(0, 99))
         this.updateSeriesLine()
       }, 1000)
     },
