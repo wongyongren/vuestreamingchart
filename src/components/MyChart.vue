@@ -1,5 +1,5 @@
 <template>
-  <apexchart ref="realtimeChart" type="line" height="200" :options="chartOptions" :series="series" />
+  <apexchart ref="realtimeChart" type="line" height="200" width="300" :options="chartOptions" :series="series" />
 </template>
 <script>
 //import { Line } from "vue-chartjs";
@@ -17,11 +17,20 @@ export default {
         colors: ['#FCCF31', '#17ead9', '#f02fc2'],
         animations: {
           enabled: true,
-          easing: 'easeinout',
-          speed: 100
+          easing: 'linear',
+          speed: 8000,
+          animateGradually: {
+            enabled: true,
+            delay: 150
+        },
+        dynamicAnimation: {
+            enabled: true,
+            speed: 350
+        }
         },
         chart: {
           height: 350,
+          width: 350,
           type: 'line'
         },
         grid: {
@@ -54,17 +63,17 @@ export default {
           }
         },
         xaxis: {
-          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+          categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
           labels: {
             style: {
-              colors: '#fff'
+              colors: 'black'
             }
           }
         },
         yaxis: {
           labels: {
             style: {
-              colors: '#fff'
+              colors: 'black'
             }
           }
         }

@@ -1,6 +1,10 @@
 <template>
   <div id="app">
      <MyChart />
+     <MyChart />
+     <MyChart />
+     <MyChart />
+     <MyChart />
   </div>
 </template>
 
