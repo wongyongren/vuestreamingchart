@@ -1,104 +1,122 @@
 <template>
-  <apexchart ref="realtimeChart" type="line" height="200" width="300" :options="chartOptions" :series="series" />
+  <apexchart
+    ref="realtimeChart"
+    type="area"
+    height="250"
+    width="300"
+    :options="chartOptions"
+    :series="series"
+  />
 </template>
 <script>
 //import { Line } from "vue-chartjs";
+import VueApexCharts from "vue-apexcharts";
 
 import "chartjs-plugin-streaming";
 
 export default {
-  data () {
+  components: {
+    apexchart: VueApexCharts,
+  },
+  data() {
     return {
-      series: [{
-        name: 'Desktops',
-        data: [10, 41, 35, 51, 49, 62, 69, 91, 99]
-      }],
+      time: 1,
+      series: [
+        {
+          name: "Desktops",
+          data: [...Array(15).fill(0)],
+        },
+      ],
       chartOptions: {
-        colors: ['#FCCF31', '#17ead9', '#f02fc2'],
-        animations: {
-          enabled: true,
-          easing: 'linear',
-          speed: 8000,
-          animateGradually: {
-            enabled: true,
-            delay: 150
-        },
-        dynamicAnimation: {
-            enabled: true,
-            speed: 350
-        }
-        },
         chart: {
-          height: 350,
-          width: 350,
-          type: 'line'
+          id: "realtime",
+          height: 250,
+          animations: {
+            enabled: true,
+            easing: "linear",
+            dynamicAnimation: {
+              speed: 500,
+            },
+          },
+          toolbar: {
+            show: false,
+          },
+          zoom: {
+            enabled: false,
+          },
         },
         grid: {
           show: true,
           strokeDashArray: 0,
           xaxis: {
             lines: {
-              show: true
-            }
-          }
+              show: false,
+            },
+          },
         },
         stroke: {
-          curve: 'smooth'
+          curve: "smooth",
         },
         dropShadow: {
           enabled: true,
           opacity: 0.3,
           blur: 5,
           left: -7,
-          top: 22
+          top: 22,
         },
         dataLabels: {
-          enabled: false
+          enabled: false,
         },
         title: {
-          text: 'Line Real Time',
-          align: 'left',
+          text: "Line Real Time",
+          align: "left",
           style: {
-            color: '#FFF'
-          }
+            color: "black",
+          },
         },
         xaxis: {
-          categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
-          labels: {
-            style: {
-              colors: 'black'
-            }
-          }
+          categories: Array(15).fill(0)
         },
         yaxis: {
+          max:10,
+          min: 0,
           labels: {
             style: {
-              colors: 'black'
-            }
-          }
-        }
-      }
-    }
-  },
+              colors: "black",
+            },
+          },
+        },
+      },
+    };
+  },  
   mounted() {
     this.setDataLineChart();
   },
   methods: {
-    getRandomArbitrary () {
-      return Math.floor(Math.random() * 99)
+    getRandomArbitrary() {
+      return Math.floor(Math.random() * 10);
     },
-    setDataLineChart () {
+    setDataLineChart() {
       setInterval(() => {
-        this.series[0].data.splice(0, 1)
-        this.series[0].data.push(this.getRandomArbitrary(0, 99))
-        this.updateSeriesLine()
-      }, 1000)
+        this.series[0].data.splice(0, 1);
+        this.series[0].data.push(this.getRandomArbitrary(0, 10));
+        this.chartOptions.xaxis.categories.splice(0, 1);
+        this.time = new Date() ;
+        this.chartOptions.xaxis.categories.push(this.time.toLocaleTimeString('en-US'));
+        this.updateSeriesLine();
+      }, 1000);
     },
-    updateSeriesLine () {
-      this.$refs.realtimeChart.updateSeries([{
-        data: this.series[0].data
-      }], false, true)
-    }
+    updateSeriesLine() {
+      this.$refs.realtimeChart.updateSeries(
+        [
+          {
+            data: this.series[0].data,
+          },
+        ],
+        false,
+        true
+      );
+    },
   },
 };
 </script>

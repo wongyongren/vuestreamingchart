@@ -1,16 +1,13 @@
 <template>
   <div id="app">
      <MyChart />
-     <MyChart />
-     <MyChart />
-     <MyChart />
-     <MyChart />
   </div>
 </template>
 
 
 <script>
 import MyChart from "./components/MyChart.vue";
+//import TopChart from "./components/TopChart.vue"
 
 export default {
   name: "app",
