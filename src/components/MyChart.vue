@@ -1,18 +1,18 @@
 <template>
-  <apexchart
-    ref="realtimeChart"
-    type="area"
-    height="250"
-    width="300"
-    :options="chartOptions"
-    :series="series"
-  />
+  <div id="chart">
+    <apexchart
+      ref="realtimeChart"
+      type="area"
+      height="250"
+      width="300"
+      :options="chartOptions"
+      :series="series"
+    />
+  </div>
 </template>
 <script>
 //import { Line } from "vue-chartjs";
 import VueApexCharts from "vue-apexcharts";
-
-import "chartjs-plugin-streaming";
 
 export default {
   components: {
@@ -23,7 +23,7 @@ export default {
       time: 1,
       series: [
         {
-          name: "Desktops",
+          //name: "Desktops",
           data: [...Array(15).fill(0)],
         },
       ],
@@ -35,7 +35,7 @@ export default {
             enabled: true,
             easing: "linear",
             dynamicAnimation: {
-              speed: 500,
+              speed: 10,
             },
           },
           toolbar: {
@@ -68,17 +68,22 @@ export default {
           enabled: false,
         },
         title: {
-          text: "Line Real Time",
           align: "left",
           style: {
             color: "black",
           },
         },
+        markers: {
+          size: 0,
+        },
+        legend: {
+          show: false,
+        },
         xaxis: {
-          categories: Array(15).fill(0)
+          categories: Array(15).fill(0),
         },
         yaxis: {
-          max:10,
+          max: 10,
           min: 0,
           labels: {
             style: {
@@ -88,7 +93,7 @@ export default {
         },
       },
     };
-  },  
+  },
   mounted() {
     this.setDataLineChart();
   },
@@ -101,8 +106,10 @@ export default {
         this.series[0].data.splice(0, 1);
         this.series[0].data.push(this.getRandomArbitrary(0, 10));
         this.chartOptions.xaxis.categories.splice(0, 1);
-        this.time = new Date() ;
-        this.chartOptions.xaxis.categories.push(this.time.toLocaleTimeString('en-US'));
+        this.time = new Date();
+        this.chartOptions.xaxis.categories.push(
+          this.time.toLocaleTimeString("en-US")
+        );
         this.updateSeriesLine();
       }, 1000);
     },
