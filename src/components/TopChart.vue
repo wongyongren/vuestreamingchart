@@ -1,6 +1,7 @@
 <template>
   <div id="chart">
     <apexchart
+      ref="realtimeChart"
       type="radialBar"
       height="250"
       width="300"
@@ -19,9 +20,10 @@ export default {
   },
   data() {
     return {
-      series: [76],
+      series: [50],
       chartOptions: {
         chart: {
+          id: "realtime",
           type: "radialBar",
           offsetY: -20,
           sparkline: {
@@ -32,18 +34,11 @@ export default {
           radialBar: {
             startAngle: -90,
             endAngle: 90,
+
             track: {
               background: "#e7e7e7",
-              strokeWidth: "97%",
+              strokeWidth: "97",
               margin: 5, // margin is in pixels
-              dropShadow: {
-                enabled: true,
-                top: 2,
-                left: 0,
-                color: "#999",
-                opacity: 1,
-                blur: 2,
-              },
             },
             dataLabels: {
               name: {
@@ -52,9 +47,16 @@ export default {
               value: {
                 offsetY: -2,
                 fontSize: "22px",
+                formatter: function (val) {
+                  return val;
+                },
               },
             },
           },
+        },
+        xaxis: {
+          min: 0,
+          max: 1,
         },
         grid: {
           padding: {
@@ -62,19 +64,37 @@ export default {
           },
         },
         fill: {
-          type: "gradient",
-          gradient: {
-            shade: "light",
-            shadeIntensity: 0.4,
-            inverseColors: false,
-            opacityFrom: 1,
-            opacityTo: 1,
-            stops: [0, 50, 53, 91],
-          },
+          type: "solid",
         },
-        labels: ["Average Results"],
+        //labels: ["Average Results"],
       },
     };
+  },
+    mounted() {
+    this.setDataLineChart();
+  },
+  methods: {
+    getRandomArbitrary() {
+      return Math.floor(Math.random() * 10);
+    },
+    setDataLineChart() {
+      setInterval(() => {
+        this.series.splice(0, 1);
+        this.series.push(this.getRandomArbitrary(0, 10));
+        //this.updateSeriesLine();
+      }, 1000);
+    },
+    updateSeriesLine() {
+      this.$refs.realtimeChart.updateSeries(
+        [
+          {
+            data: this.series,
+          },
+        ],
+        false,
+        true
+      );
+    },
   },
 };
 </script>
