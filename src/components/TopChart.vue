@@ -5,6 +5,8 @@
       type="radialBar"
       height="250"
       width="300"
+      label="hello"
+      title="hello"
       :options="chartOptions"
       :series="series"
     ></apexchart>
@@ -18,23 +20,23 @@ export default {
   components: {
     apexchart: VueApexCharts,
   },
+
   data() {
     return {
-      series: [50],
+      series: [0],
       chartOptions: {
         chart: {
           id: "realtime",
           type: "radialBar",
           offsetY: -20,
           sparkline: {
-            enabled: true,
+            enabled: false,
           },
         },
         plotOptions: {
           radialBar: {
-            startAngle: -90,
-            endAngle: 90,
-
+            startAngle: -110,
+            endAngle: 110,
             track: {
               background: "#e7e7e7",
               strokeWidth: "97",
@@ -45,6 +47,7 @@ export default {
                 show: false,
               },
               value: {
+                show:false,
                 offsetY: -2,
                 fontSize: "22px",
                 formatter: function (val) {
@@ -54,10 +57,6 @@ export default {
             },
           },
         },
-        xaxis: {
-          min: 0,
-          max: 1,
-        },
         grid: {
           padding: {
             top: -10,
@@ -66,21 +65,28 @@ export default {
         fill: {
           type: "solid",
         },
-        //labels: ["Average Results"],
+
+        labels: ["Average Results"],
       },
     };
   },
-    mounted() {
+  mounted() {
     this.setDataLineChart();
   },
   methods: {
+    valueToPercent() {
+      const max = 100;
+      return (this.getRandomArbitrary(0, 100) /  max) * 100;
+    },
+
     getRandomArbitrary() {
-      return Math.floor(Math.random() * 10);
+      return Math.floor(Math.random() * 100);
     },
     setDataLineChart() {
       setInterval(() => {
         this.series.splice(0, 1);
-        this.series.push(this.getRandomArbitrary(0, 10));
+        this.series.push(parseInt(this.valueToPercent()));
+        //this.chartOptions.plotOptions.radialBar.dataLabels.push(this.getRandomArbitrary(0, 10)*10);
         //this.updateSeriesLine();
       }, 1000);
     },
