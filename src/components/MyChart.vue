@@ -34,8 +34,10 @@ export default {
           animations: {
             enabled: true,
             easing: "linear",
+            speed: 800,
             dynamicAnimation: {
-              speed: 10,
+              enabled: true,
+              speed: 900,
             },
           },
           toolbar: {
@@ -46,7 +48,7 @@ export default {
           },
         },
         grid: {
-          show: true,
+          show: false,
           strokeDashArray: 0,
           xaxis: {
             lines: {
