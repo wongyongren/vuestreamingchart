@@ -110,13 +110,13 @@ export default {
     },
     setDataLineChart() {
       setInterval(() => {
-        this.series[0].data.splice(0, 1);
-        this.chartOptions.xaxis.categories.splice(0, 1);
         this.time = new Date();
         this.series[0].data.push(parseInt(this.getRandomArbitrary(0, 10)));
         this.chartOptions.xaxis.categories.push(
           this.time.toLocaleTimeString("en-US")
         );
+        this.series[0].data.splice(0, 1);
+        this.chartOptions.xaxis.categories.splice(0, 1);
         this.updateSeriesLine();
       }, 1000);
     },
