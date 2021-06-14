@@ -1,5 +1,5 @@
 <template>
-  <div id="chart" class="dashboard-item">
+  <div id="chart" class="dashboard-item1">
     <apexchart
       ref="realtimeChart"
       type="area"
@@ -34,7 +34,7 @@ export default {
       },
       chartOptions: {
         chart: {
-          height: 200,
+          height: 250,
           id: "realtime",
           animations: {
             enabled: true,
@@ -136,7 +136,7 @@ export default {
 </script>
 
 <style scoped>
-.dashboard-item {
+.dashboard-item1 {
   width: 160px;
   padding: 5px;
   margin-top: 0.5rem;

@@ -1,6 +1,6 @@
 <template>
-    <div class="row">
-      <TopChart />
+    <div >
+      <TopChart class="dashgroup" />
       <MyChart />
     </div>
 </template>
@@ -8,21 +8,17 @@
 <script>
 import MyChart from "./MyChart.vue";
 import TopChart from "./TopChart.vue";
-//import test from "./components/test.vue";
-//import zingchart from "./components/zingerchart.vue";
 
 export default {
   components: {
     MyChart,
-    TopChart,
-    //test,
-    //zingchart
+    TopChart
   },
 };
 </script>
 <style>
-#dashgroup {
-  height: 330px;
+.dashgroup {
+  height: 100px;
   width: 160px;
   display: flex;
   display: -webkit-flex;
