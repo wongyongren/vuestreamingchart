@@ -9,8 +9,8 @@
       :series="series"
     ></apexchart>
     <span style="text-align: left; top: 80%; width: 160px; position: absolute">&nbsp;&nbsp;&nbsp;&nbsp;0 </span>
-    <span style="text-align: center; top: 80%; width: 160px; position: absolute"> 0 </span>
-    <span style="text-align: right; top: 80%; width: 160px; position: absolute"> 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span style="text-align: center; top: 80%; width: 160px; position: absolute"> {{this.series[0]}} </span>
+    <span style="text-align: right; top: 80%; width: 160px; position: absolute"> 100&nbsp;&nbsp;&nbsp;</span>
   </div>
 </template>
 
@@ -84,20 +84,7 @@ export default {
       setInterval(() => {
         this.series.splice(0, 1);
         this.series.push(parseInt(this.valueToPercent()));
-        //this.chartOptions.plotOptions.radialBar.dataLabels.push(this.getRandomArbitrary(0, 10)*10);
-        //this.updateSeriesLine();
       }, 1000);
-    },
-    updateSeriesLine() {
-      this.$refs.realtimeChart.updateSeries(
-        [
-          {
-            data: this.series,
-          },
-        ],
-        false,
-        true
-      );
     },
   },
 };
