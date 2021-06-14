@@ -3,9 +3,8 @@
     <apexchart
       ref="realtimeChart"
       type="radialBar"
+      max-height="130"
       height="250"
-      label="hello"
-      title="hello"
       :options="chartOptions"
       :series="series"
     ></apexchart>
@@ -25,6 +24,7 @@ export default {
       series: [0],
       chartOptions: {
         chart: {
+          height: 250,
           id: "realtime",
           type: "radialBar",
           offsetY: -20,

@@ -1,5 +1,5 @@
 <template>
-  <div id="chart" class = "dashboard-item ">
+  <div id="chart" class="dashboard-item">
     <apexchart
       ref="realtimeChart"
       type="area"
@@ -27,8 +27,14 @@ export default {
           data: [...Array(10).fill(0)],
         },
       ],
+      plotOptions: {
+        area: {
+          fillTo: "origin",
+        },
+      },
       chartOptions: {
         chart: {
+          height: 200,
           id: "realtime",
           animations: {
             enabled: true,
@@ -74,9 +80,10 @@ export default {
           show: false,
         },
         xaxis: {
-          show:false,
+          show: false,
           categories: Array(10).fill(0),
-            labels: {
+          labels: {
+            show: false,
             style: {
               colors: "white",
             },
@@ -106,11 +113,11 @@ export default {
         this.series[0].data.splice(0, 1);
         this.chartOptions.xaxis.categories.splice(0, 1);
         this.time = new Date();
-        this.updateSeriesLine();
         this.series[0].data.push(parseInt(this.getRandomArbitrary(0, 10)));
         this.chartOptions.xaxis.categories.push(
           this.time.toLocaleTimeString("en-US")
         );
+        this.updateSeriesLine();
       }, 1000);
     },
     updateSeriesLine() {
@@ -130,12 +137,12 @@ export default {
 
 <style scoped>
 .dashboard-item {
-    width: 160px;
-    padding: 5px;
-    margin-top: .5rem;
-    border-radius: 5px;
-    background-color: #111516;
-    color: #66e35f;
-    box-shadow: 0 .125rem .3rem rgba(0,0,0,.85)!important;
+  width: 160px;
+  padding: 5px;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  background-color: #111516;
+  color: #66e35f;
+  box-shadow: 0 0.125rem 0.3rem rgba(0, 0, 0, 0.85) !important;
 }
 </style>
