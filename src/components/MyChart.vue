@@ -1,13 +1,13 @@
 <template>
-  <div id="chart">
+  <div id="chart" class = "dashboard-item ">
     <apexchart
       ref="realtimeChart"
       type="area"
-      height="250"
-      width="300"
+      height="265"
+      background-color="black"
       :options="chartOptions"
       :series="series"
-    />
+    ></apexchart>
   </div>
 </template>
 <script>
@@ -24,20 +24,19 @@ export default {
       series: [
         {
           //name: "Desktops",
-          data: [...Array(15).fill(0)],
+          data: [...Array(10).fill(0)],
         },
       ],
       chartOptions: {
         chart: {
           id: "realtime",
-          height: 250,
           animations: {
             enabled: true,
             easing: "linear",
-            speed: 800,
+            speed: 1000,
             dynamicAnimation: {
               enabled: true,
-              speed: 900,
+              speed: 1000,
             },
           },
           toolbar: {
@@ -48,7 +47,7 @@ export default {
           },
         },
         grid: {
-          show: false,
+          show: true,
           strokeDashArray: 0,
           xaxis: {
             lines: {
@@ -58,13 +57,6 @@ export default {
         },
         stroke: {
           curve: "smooth",
-        },
-        dropShadow: {
-          enabled: true,
-          opacity: 0.3,
-          blur: 5,
-          left: -7,
-          top: 22,
         },
         dataLabels: {
           enabled: false,
@@ -82,14 +74,15 @@ export default {
           show: false,
         },
         xaxis: {
-          categories: Array(15).fill(0),
+          show:false,
+          categories: Array(10).fill(0),
         },
         yaxis: {
           max: 10,
           min: 0,
           labels: {
             style: {
-              colors: "black",
+              colors: "white",
             },
           },
         },
@@ -106,13 +99,13 @@ export default {
     setDataLineChart() {
       setInterval(() => {
         this.series[0].data.splice(0, 1);
-        this.series[0].data.push(this.getRandomArbitrary(0, 10));
         this.chartOptions.xaxis.categories.splice(0, 1);
         this.time = new Date();
+        this.updateSeriesLine();
+        this.series[0].data.push(parseInt(this.getRandomArbitrary(0, 10)));
         this.chartOptions.xaxis.categories.push(
           this.time.toLocaleTimeString("en-US")
         );
-        this.updateSeriesLine();
       }, 1000);
     },
     updateSeriesLine() {
@@ -129,3 +122,15 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.dashboard-item {
+    width: 160px;
+    padding: 5px;
+    margin-top: .5rem;
+    border-radius: 5px;
+    background-color: #111516;
+    color: #66e35f;
+    box-shadow: 0 .125rem .3rem rgba(0,0,0,.85)!important;
+}
+</style>
