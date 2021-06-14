@@ -76,6 +76,11 @@ export default {
         xaxis: {
           show:false,
           categories: Array(10).fill(0),
+            labels: {
+            style: {
+              colors: "white",
+            },
+          },
         },
         yaxis: {
           max: 10,
