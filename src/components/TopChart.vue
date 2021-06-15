@@ -4,13 +4,21 @@
       ref="realtimeChart"
       type="radialBar"
       height="180"
-      width= "160"
+      width="160"
       :options="chartOptions"
       :series="series"
     ></apexchart>
-    <span style="text-align: left; top: 80%; width: 160px; position: absolute">&nbsp;&nbsp;&nbsp;&nbsp;0 </span>
-    <span style="text-align: center; top: 80%; width: 160px; position: absolute"> {{this.series[0]}} </span>
-    <span style="text-align: right; top: 80%; width: 160px; position: absolute"> 100&nbsp;&nbsp;&nbsp;</span>
+    <span style="text-align: left; top: 80%; width: 160px; position: absolute"
+      >&nbsp;&nbsp;&nbsp;&nbsp;0
+    </span>
+    <span
+      style="text-align: center; top: 80%; width: 160px; position: absolute"
+    >
+      {{ this.series[0] }}
+    </span>
+    <span style="text-align: right; top: 80%; width: 160px; position: absolute">
+      100&nbsp;&nbsp;&nbsp;</span
+    >
   </div>
 </template>
 
@@ -31,8 +39,8 @@ export default {
             enabled: true,
           },
         },
-        fill:{
-          colors: ['#f00'] 
+        fill: {
+          colors: ["#f00"],
         },
         plotOptions: {
           radialBar: {
@@ -75,7 +83,21 @@ export default {
       const max = 100;
       return (this.getRandomArbitrary(0, 100) / max) * 100;
     },
-
+    updateColor() {
+      if(this.series >55){
+      this.chartOptions = {
+        fill: {
+          colors: ["#f00"],
+        },
+      };
+      } else{
+      this.chartOptions = {
+        fill: {
+          colors: ["#66e35f"],
+        },
+      };
+      }
+    },
     getRandomArbitrary() {
       return Math.floor(Math.random() * 100);
     },
@@ -83,6 +105,9 @@ export default {
       setInterval(() => {
         this.series.splice(0, 1);
         this.series.push(parseInt(this.valueToPercent()));
+      }, 1000);
+      setInterval(() => {
+        this.updateColor()
       }, 1000);
     },
   },

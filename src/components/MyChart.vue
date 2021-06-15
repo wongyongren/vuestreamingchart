@@ -42,7 +42,7 @@ export default {
             speed: 1000,
             dynamicAnimation: {
               enabled: true,
-              speed: 100,
+              speed: 1000,
             },
           },
 
@@ -122,22 +122,22 @@ export default {
     setDataLineChart() {
       setInterval(()=>{
         this.updateSeriesLine();
-      },1100)
+      },1000)
       setInterval(() => {
         this.time = new Date();
         const testing = [
           ...this.series[0].data.splice(1),
           parseInt(this.getRandomArbitrary(0, 10)),
         ];
-        console.log("array", testing);
+        //console.log("array", testing);
         // this.series[0].data.push(parseInt(this.getRandomArbitrary(0, 10)));
         this.chartOptions.xaxis.categories.push(
           this.time.toLocaleTimeString("en-US")
         );
-        this.series[0].data.splice(0, 1);
+        //this.series[0].data.splice(0, 1);
         this.series[0].data = [...testing];
         this.chartOptions.xaxis.categories.splice(0, 1);
-      }, 900);
+      }, 500);
     },
     updateSeriesLine() {
       this.$refs.realtimeChart.updateSeries(
