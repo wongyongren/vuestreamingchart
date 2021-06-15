@@ -4,7 +4,6 @@
       ref="realtimeChart"
       type="area"
       height="265"
-      background-color="black"
       :options="chartOptions"
       :series="series"
     ></apexchart>
@@ -24,7 +23,7 @@ export default {
       series: [
         {
           //name: "Desktops",
-          data: [...Array(10).fill(0)],
+          data: [...Array(15).fill(0)],
         },
       ],
       plotOptions: {
@@ -32,6 +31,7 @@ export default {
           fillTo: "origin",
         },
       },
+
       chartOptions: {
         chart: {
           height: 250,
@@ -42,9 +42,10 @@ export default {
             speed: 1000,
             dynamicAnimation: {
               enabled: true,
-              speed: 1000,
+              speed: 100,
             },
           },
+
           toolbar: {
             show: false,
           },
@@ -61,8 +62,18 @@ export default {
             },
           },
         },
+        fill: {
+          colors: ["#66e35f"],
+          opacity: 0.9,
+          type: "solid",
+        },
         stroke: {
+          show: true,
           curve: "smooth",
+          colors: ["#66e35f"],
+          lineCap: "butt",
+          width: 2,
+          dashArray: 0,
         },
         dataLabels: {
           enabled: false,
@@ -81,7 +92,7 @@ export default {
         },
         xaxis: {
           show: false,
-          categories: Array(10).fill(0),
+          categories: Array(15).fill(0),
           labels: {
             show: false,
             style: {
@@ -109,16 +120,24 @@ export default {
       return Math.floor(Math.random() * 10);
     },
     setDataLineChart() {
+      setInterval(()=>{
+        this.updateSeriesLine();
+      },1100)
       setInterval(() => {
         this.time = new Date();
-        this.series[0].data.push(parseInt(this.getRandomArbitrary(0, 10)));
+        const testing = [
+          ...this.series[0].data.splice(1),
+          parseInt(this.getRandomArbitrary(0, 10)),
+        ];
+        console.log("array", testing);
+        // this.series[0].data.push(parseInt(this.getRandomArbitrary(0, 10)));
         this.chartOptions.xaxis.categories.push(
           this.time.toLocaleTimeString("en-US")
         );
         this.series[0].data.splice(0, 1);
+        this.series[0].data = [...testing];
         this.chartOptions.xaxis.categories.splice(0, 1);
-        this.updateSeriesLine();
-      }, 1000);
+      }, 900);
     },
     updateSeriesLine() {
       this.$refs.realtimeChart.updateSeries(

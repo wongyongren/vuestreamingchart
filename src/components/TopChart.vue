@@ -31,12 +31,15 @@ export default {
             enabled: true,
           },
         },
+        fill:{
+          colors: ['#f00'] 
+        },
         plotOptions: {
           radialBar: {
             startAngle: -90,
             endAngle: 90,
             track: {
-              background: "#e7e7e7",
+              background: "#ffffff",
               strokeWidth: "97",
               margin: 5, // margin is in pixels
             },
@@ -60,10 +63,6 @@ export default {
             top: -10,
           },
         },
-        fill: {
-          type: "solid",
-        },
-
         labels: ["Average Results"],
       },
     };

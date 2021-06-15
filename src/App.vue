@@ -1,6 +1,6 @@
 <template>
   <div id="app" class = "row">
-    <display/><display/>
+    <display/>
   </div>
 </template>
 
