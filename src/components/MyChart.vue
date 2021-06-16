@@ -109,7 +109,7 @@ export default {
           },
         },
         yaxis: {
-          //max: this.getget,
+          max: 100 ,
           min: 0,
           labels: {
             style: {
@@ -158,8 +158,20 @@ export default {
         ],
         false,
         true
-      );
+      );      
     },
+    //     updateYMax() {
+    //   this.$refs.realtimeChart.updateSeries(
+    //     [
+    //       {
+    //         data: this.series[0].data,
+    //       },
+    //     ],
+    //     false,
+    //     true
+    //   );
+      
+    // },
   },
 };
 </script>
