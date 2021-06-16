@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueSvgGauge from 'vue-svg-gauge'
 import VueApexCharts from 'vue-apexcharts'
+import store from './store'
 import 'zingchart/es6';
 import zingchartVue from 'zingchart-vue';
 
@@ -15,5 +16,6 @@ Vue.component('apexchart', VueApexCharts)
 Vue.config.productionTip = false
 
 new Vue({
+  store,
   render: h => h(App),
 }).$mount('#app')

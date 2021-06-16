@@ -1,5 +1,6 @@
 <template>
   <div id="chart" class="dashboard-item1">
+    
     <apexchart
       ref="realtimeChart"
       type="area"
@@ -7,15 +8,22 @@
       :options="chartOptions"
       :series="series"
     ></apexchart>
+        <span class="status">   {{getget}}  </span>
   </div>
 </template>
 <script>
 //import { Line } from "vue-chartjs";
 import VueApexCharts from "vue-apexcharts";
+import { mapGetters, mapActions, mapMutations } from "vuex";
 
 export default {
   components: {
     apexchart: VueApexCharts,
+  },
+  computed: {
+    ...mapGetters({ getget: "getCurrentJoke" }),
+    ...mapGetters({ check: "getOnOffStatus" }),
+    ...mapGetters({ loading: "getSwitchStatus" }),
   },
   data() {
     return {
@@ -116,6 +124,8 @@ export default {
     this.setDataLineChart();
   },
   methods: {
+      ...mapActions({ postStatus: "postCurrentId" }),
+    ...mapMutations({ updateStatus: "updateSwitch" }),
     getRandomArbitrary() {
       return Math.floor(Math.random() * 10);
     },
@@ -127,7 +137,7 @@ export default {
         this.time = new Date();
         const testing = [
           ...this.series[0].data.splice(1),
-          parseInt(this.getRandomArbitrary(0, 10)),
+          parseInt(this.getget),
         ];
         //console.log("array", testing);
         // this.series[0].data.push(parseInt(this.getRandomArbitrary(0, 10)));
@@ -163,5 +173,10 @@ export default {
   background-color: #111516;
   color: #66e35f;
   box-shadow: 0 0.125rem 0.3rem rgba(0, 0, 0, 0.85) !important;
+}
+.status {
+  display: flex;
+  align-items: center;
+  color:aqua;
 }
 </style>
