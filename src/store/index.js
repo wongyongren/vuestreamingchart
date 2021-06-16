@@ -37,11 +37,11 @@ export default new Vuex.Store({
   actions: {
     //asyncronous
     async setCurrentJoke(state) {
-      const random = Math.floor(Math.random() * 10);
-      const joke = await fetch(`http://localhost:3000/modes/?id=${random}`);
-      const j = await joke.json();
-      this.totalVuePackages = j[0].id;
-      state.commit("setCurrentJoke", j[0].id);
+      const random = Math.floor(Math.random() * 99);
+      //const joke = await fetch(`http://localhost:3000/modes/?id=${random}`);
+      //const j = await joke.json();
+      //this.totalVuePackages = j[0].id;
+      state.commit("setCurrentJoke", random);
       console.log(this.totalVuePackages);
     },
     async getLastStatus(state) {

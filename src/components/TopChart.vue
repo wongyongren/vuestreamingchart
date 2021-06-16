@@ -24,12 +24,16 @@
 
 <script>
 import VueApexCharts from "vue-apexcharts";
-
+import { mapGetters } from "vuex";
 export default {
   components: {
     apexchart: VueApexCharts,
   },
-
+  computed: {
+    ...mapGetters({ getget: "getCurrentJoke" }),
+    ...mapGetters({ check: "getOnOffStatus" }),
+    ...mapGetters({ loading: "getSwitchStatus" }),
+  },
   data() {
     return {
       series: [0],
@@ -104,7 +108,7 @@ export default {
     setDataLineChart() {
       setInterval(() => {
         this.series.splice(0, 1);
-        this.series.push(parseInt(this.valueToPercent()));
+        this.series.push(parseInt(this.getget));
       }, 1000);
       setInterval(() => {
         this.updateColor()

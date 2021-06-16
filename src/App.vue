@@ -19,7 +19,7 @@ export default {
   },
   mounted() {
     this.setCurrentJoke();
-    setInterval(this.setCurrentJoke, 3000);
+    setInterval(this.setCurrentJoke, 10000);
     this.getLastStatus();
     setInterval(this.getLastStatus, 30000);
   },

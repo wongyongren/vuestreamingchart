@@ -109,7 +109,7 @@ export default {
           },
         },
         yaxis: {
-          max: 10,
+          //max: this.getget,
           min: 0,
           labels: {
             style: {
@@ -124,7 +124,7 @@ export default {
     this.setDataLineChart();
   },
   methods: {
-      ...mapActions({ postStatus: "postCurrentId" }),
+    ...mapActions({ postStatus: "postCurrentId" }),
     ...mapMutations({ updateStatus: "updateSwitch" }),
     getRandomArbitrary() {
       return Math.floor(Math.random() * 10);
