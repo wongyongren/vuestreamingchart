@@ -14,7 +14,7 @@
 <script>
 //import { Line } from "vue-chartjs";
 import VueApexCharts from "vue-apexcharts";
-import { mapGetters, mapActions, mapMutations } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
@@ -22,8 +22,6 @@ export default {
   },
   computed: {
     ...mapGetters({ getget: "getCurrentJoke" }),
-    ...mapGetters({ check: "getOnOffStatus" }),
-    ...mapGetters({ loading: "getSwitchStatus" }),
   },
   data() {
     return {
@@ -124,8 +122,6 @@ export default {
     this.setDataLineChart();
   },
   methods: {
-    ...mapActions({ postStatus: "postCurrentId" }),
-    ...mapMutations({ updateStatus: "updateSwitch" }),
     getRandomArbitrary() {
       return Math.floor(Math.random() * 10);
     },
