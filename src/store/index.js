@@ -37,7 +37,7 @@ export default new Vuex.Store({
   actions: {
     //asyncronous
     async setCurrentJoke(state) {
-      const random = Math.floor(Math.random() * 99);
+      const random = Math.floor(Math.random() * 200);
       //const joke = await fetch(`http://localhost:3000/modes/?id=${random}`);
       //const j = await joke.json();
       //this.totalVuePackages = j[0].id;

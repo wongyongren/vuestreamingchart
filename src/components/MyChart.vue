@@ -1,6 +1,5 @@
 <template>
   <div id="chart" class="dashboard-item1">
-    
     <apexchart
       ref="realtimeChart"
       type="area"
@@ -8,7 +7,7 @@
       :options="chartOptions"
       :series="series"
     ></apexchart>
-        <span class="status">   {{getget}}  </span>
+    <span class="status"> {{ getget }} </span>
   </div>
 </template>
 <script>
@@ -107,7 +106,7 @@ export default {
           },
         },
         yaxis: {
-          max: 100 ,
+          max: 100,
           min: 0,
           labels: {
             style: {
@@ -126,9 +125,13 @@ export default {
       return Math.floor(Math.random() * 10);
     },
     setDataLineChart() {
-      setInterval(()=>{
+      setInterval(() => {
         this.updateSeriesLine();
-      },1000)
+      }, 1000);
+      setInterval(() => {
+        this.updateSeriesLine();
+        this.updateYMax();
+      }, 1000);
       setInterval(() => {
         this.time = new Date();
         const testing = [
@@ -154,20 +157,21 @@ export default {
         ],
         false,
         true
-      );      
+      );
     },
-    //     updateYMax() {
-    //   this.$refs.realtimeChart.updateSeries(
-    //     [
-    //       {
-    //         data: this.series[0].data,
-    //       },
-    //     ],
-    //     false,
-    //     true
-    //   );
-      
-    // },
+    updateYMax() {
+      this.$refs.realtimeChart.updateSeries(
+        [
+          {
+            yaxis: {
+              max: 200,
+            },
+          },
+        ],
+        false,
+        true
+      );
+    },
   },
 };
 </script>
@@ -185,6 +189,6 @@ export default {
 .status {
   display: flex;
   align-items: center;
-  color:aqua;
+  color: aqua;
 }
 </style>
