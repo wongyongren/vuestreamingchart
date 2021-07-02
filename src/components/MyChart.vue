@@ -121,16 +121,18 @@ export default {
     this.setDataLineChart();
   },
   methods: {
+    setHigherValue(){
+      return Math.floor(this.getget + 10)
+    },
     getRandomArbitrary() {
       return Math.floor(Math.random() * 10);
     },
     setDataLineChart() {
-      setInterval(() => {
-        this.updateSeriesLine();
-      }, 1000);
-      setInterval(() => {
-        this.updateSeriesLine();
+      if(this.getget>=100){
         this.updateYMax();
+      }
+      setInterval(() => {
+        this.updateSeriesLine();
       }, 1000);
       setInterval(() => {
         this.time = new Date();
@@ -149,28 +151,26 @@ export default {
       }, 500);
     },
     updateSeriesLine() {
-      this.$refs.realtimeChart.updateSeries(
-        [
-          {
-            data: this.series[0].data,
-          },
-        ],
-        false,
-        true
+      this.$refs.realtimeChart.updateSeries([
+        {
+          data: this.series[0].data,
+        },
+      ],true,
+        false
       );
     },
     updateYMax() {
-      this.$refs.realtimeChart.updateSeries(
-        [
-          {
-            yaxis: {
-              max: 200,
+      this.$refs.realtimeChart.updateOptions({
+        yaxis: {
+          max: this.setHigherValue,
+          min: 0,
+          labels: {
+            style: {
+              colors: "white",
             },
           },
-        ],
-        false,
-        true
-      );
+        },
+      });
     },
   },
 };
