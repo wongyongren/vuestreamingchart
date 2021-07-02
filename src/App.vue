@@ -1,27 +1,31 @@
 <template>
-  <div id="app" class = "row">
-    <display class = "product"/>
-<display class = "product"/>
-<display class = "product"/>
+  <div id="app" class="row">
+    <Displayorp class="product" />
+        <Displaytemp class="product" />
+            <Displayph class="product" />
   </div>
 </template>
 
 <script>
-import Display from "./components/display.vue";
+import Displayorp from "./components/ORP/displayORP.vue";
+import Displaytemp from "./components/ORP/displayTemp.vue";
+import Displayph from "./components/ORP/displayPh.vue";
 import { mapActions } from "vuex";
 export default {
   name: "app",
 
   components: {
-    Display,
+    Displayorp,
+    Displaytemp,
+    Displayph
   },
-    methods: {
+  methods: {
     ...mapActions(["getLastStatus"]),
-    ...mapActions(["setCurrentJoke"])
+    ...mapActions(["setORP"]),
   },
   mounted() {
-    this.setCurrentJoke();
-    setInterval(this.setCurrentJoke, 10000);
+    this.setORP();
+    setInterval(this.setORP, 10000);
   },
 };
 </script>
@@ -32,6 +36,6 @@ export default {
   flex-wrap: wrap;
 }
 .row .product {
-margin: 2px;
+  margin: 2px;
 }
 </style>
