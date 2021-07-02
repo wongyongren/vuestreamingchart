@@ -46,7 +46,7 @@ export default {
             easing: "linear",
             speed: 1000,
             dynamicAnimation: {
-              enabled: true,
+              enabled: false,
               speed: 1000,
             },
           },
@@ -122,7 +122,7 @@ export default {
   },
   methods: {
     setHigherValue(){
-      return Math.floor(this.getget + 10)
+      return Math.floor(this.getget += 10)
     },
     getRandomArbitrary() {
       return Math.floor(Math.random() * 10);
@@ -155,14 +155,13 @@ export default {
         {
           data: this.series[0].data,
         },
-      ],true,
-        false
+      ],
       );
     },
     updateYMax() {
       this.$refs.realtimeChart.updateOptions({
         yaxis: {
-          max: this.setHigherValue,
+          max: this.setHigherValue(),
           min: 0,
           labels: {
             style: {
