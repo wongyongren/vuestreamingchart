@@ -37,7 +37,7 @@ export default new Vuex.Store({
   actions: {
     //asyncronous
     async setCurrentJoke(state) {
-      const random = Math.floor(Math.random() * 200);
+      const random = Math.floor(Math.random() * 35);
       //const joke = await fetch(`http://localhost:3000/modes/?id=${random}`);
       //const j = await joke.json();
       //this.totalVuePackages = j[0].id;
@@ -77,6 +77,7 @@ export default new Vuex.Store({
   getters: {
     getCurrentJoke: state => state.currentJoke,
     getOnOffStatus: state => state.lastStatus,
-    getSwitchStatus: state => state.loading
+    getSwitchStatus: state => state.loading,
+    getPlusTen: state => state.currentJoke + 10,
   }
 });

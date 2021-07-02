@@ -7,7 +7,6 @@
       :options="chartOptions"
       :series="series"
     ></apexchart>
-    <span class="status"> {{ getget }} </span>
   </div>
 </template>
 <script>
@@ -20,7 +19,7 @@ export default {
     apexchart: VueApexCharts,
   },
   computed: {
-    ...mapGetters({ getget: "getCurrentJoke" }),
+    ...mapGetters({ getget: "getCurrentJoke", NewValue: "getPlusTen" }),
   },
   data() {
     return {
@@ -106,8 +105,9 @@ export default {
           },
         },
         yaxis: {
-          max: 100,
+          max: 40,
           min: 0,
+          tickAmount:7,
           labels: {
             style: {
               colors: "white",
@@ -121,17 +121,16 @@ export default {
     this.setDataLineChart();
   },
   methods: {
-    setHigherValue(){
-      return Math.floor(this.getget += 10)
-    },
     getRandomArbitrary() {
       return Math.floor(Math.random() * 10);
     },
     setDataLineChart() {
-      if(this.getget>=100){
-        this.updateYMax();
-      }
       setInterval(() => {
+        // if (this.getget >= 100) {
+        //   this.updateYMax();
+        // } else {
+        //   this.updateYNormal();
+        // }
         this.updateSeriesLine();
       }, 1000);
       setInterval(() => {
@@ -155,13 +154,25 @@ export default {
         {
           data: this.series[0].data,
         },
-      ],
-      );
+      ]);
     },
     updateYMax() {
       this.$refs.realtimeChart.updateOptions({
         yaxis: {
-          max: this.setHigherValue(),
+          max: this.NewValue,
+          min: 0,
+          labels: {
+            style: {
+              colors: "white",
+            },
+          },
+        },
+      });
+    },
+    updateYNormal() {
+      this.$refs.realtimeChart.updateOptions({
+        yaxis: {
+          max: 100,
           min: 0,
           labels: {
             style: {

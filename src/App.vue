@@ -1,6 +1,8 @@
 <template>
   <div id="app" class = "row">
-    <display/>
+    <display class = "product"/>
+<display class = "product"/>
+<display class = "product"/>
   </div>
 </template>
 
@@ -23,3 +25,13 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row .product {
+margin: 2px;
+}
+</style>
