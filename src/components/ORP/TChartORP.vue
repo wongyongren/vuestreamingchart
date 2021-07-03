@@ -88,7 +88,7 @@ export default {
       return (this.getget / 1400) * 100;
     },
     updateColor() {
-      if(this.series >55){
+      if(this.series > 80 || this.series <20 ){
       this.chartOptions = {
         fill: {
           colors: ["#f00"],

@@ -14,10 +14,10 @@
     <span
       style="text-align: center; top: 80%; width: 160px; position: absolute ; font-size:20px ; font-weight: bold "
     >
-      {{ this.series[0] }}
+      {{ this.getget }}
     </span>
     <span style="text-align: right; top: 80%; width: 160px ; font-size:10px ; color:white ; margin-right: 15px">
-      100</span
+      14</span
     >
   </div>
 </template>
@@ -82,11 +82,11 @@ export default {
   },
   methods: {
     valueToPercent() {
-      const max = 100;
-      return (this.getRandomArbitrary(0, 100) / max) * 100;
+      const max = 14;
+      return (this.getget / max) * 100;
     },
     updateColor() {
-      if(this.series >55){
+      if(this.getget >9.5 || this.getget < 4.5){
       this.chartOptions = {
         fill: {
           colors: ["#f00"],
@@ -106,7 +106,7 @@ export default {
     setDataLineChart() {
       setInterval(() => {
         this.series.splice(0, 1);
-        this.series.push(parseInt(this.getget));
+        this.series.push(parseInt(this.valueToPercent()));
       }, 1000);
       setInterval(() => {
         this.updateColor()
