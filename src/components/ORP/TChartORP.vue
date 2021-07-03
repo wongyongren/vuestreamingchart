@@ -8,15 +8,41 @@
       :options="chartOptions"
       :series="series"
     ></apexchart>
-    <span style="text-align: left; top: 80%; width: 160px; position: absolute ; font-size:10px ; color:white ; margin-left: 20px"
-      > 0
+    <span
+      style="
+        text-align: left;
+        top: 80%;
+        width: 160px;
+        position: absolute;
+        font-size: 10px;
+        color: white;
+        margin-left: 20px;
+      "
+    >
+      0
     </span>
     <span
-      style="text-align: center; top: 80%; width: 160px; position: absolute ; font-size:20px ; font-weight: bold " 
+      style="
+        text-align: center;
+        top: 80%;
+        width: 160px;
+        position: absolute;
+        font-size: 20px;
+        font-weight: bold;
+      "
     >
       {{ this.getget }}
     </span>
-    <span style="text-align: right; top: 80%; width: 160px; position: absolute ; font-size:10px ; color:white">
+    <span
+      style="
+        text-align: right;
+        top: 80%;
+        width: 160px;
+        position: absolute;
+        font-size: 10px;
+        color: white;
+      "
+    >
       1400&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
     >
   </div>
@@ -84,22 +110,25 @@ export default {
   },
   methods: {
     valueToPercent() {
-      //const max = 100;
-      return (this.getget / 1400) * 100;
+      const max = 1400;
+      if (this.getget > max) {
+        return 100;
+      }
+      return (this.getget / max) * 100;
     },
     updateColor() {
-      if(this.series > 80 || this.series <20 ){
-      this.chartOptions = {
-        fill: {
-          colors: ["#f00"],
-        },
-      };
-      } else{
-      this.chartOptions = {
-        fill: {
-          colors: ["#66e35f"],
-        },
-      };
+      if (this.series > 80 || this.series < 20) {
+        this.chartOptions = {
+          fill: {
+            colors: ["#f00"],
+          },
+        };
+      } else {
+        this.chartOptions = {
+          fill: {
+            colors: ["#66e35f"],
+          },
+        };
       }
     },
     setDataLineChart() {
@@ -108,7 +137,7 @@ export default {
         this.series.push(parseInt(this.valueToPercent()));
       }, 1000);
       setInterval(() => {
-        this.updateColor()
+        this.updateColor();
       }, 1000);
     },
   },

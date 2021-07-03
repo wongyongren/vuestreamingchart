@@ -82,11 +82,12 @@ export default {
   },
   methods: {
     valueToPercent() {
+      const min = 20;
       const max = 34;
       if (this.getget > max){
         return 100;
       }
-      return (this.getget / max) * 100;
+      return ((this.getget - min) / (max-min)  *100);
     },
     updateColor() {
       if(this.series >80 || this.series <20 ){

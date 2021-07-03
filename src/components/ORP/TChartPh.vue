@@ -8,15 +8,41 @@
       :options="chartOptions"
       :series="series"
     ></apexchart>
-    <span style="text-align: left; top: 80%; width: 160px; position: absolute ; font-size:10px ; color:white ; margin-left: 20px"
-      > 0
+    <span
+      style="
+        text-align: left;
+        top: 80%;
+        width: 160px;
+        position: absolute;
+        font-size: 10px;
+        color: white;
+        margin-left: 20px;
+      "
+    >
+      0
     </span>
     <span
-      style="text-align: center; top: 80%; width: 160px; position: absolute ; font-size:20px ; font-weight: bold "
+      style="
+        text-align: center;
+        top: 80%;
+        width: 160px;
+        position: absolute;
+        font-size: 20px;
+        font-weight: bold;
+      "
     >
       {{ this.getget }}
     </span>
-    <span style="text-align: right; top: 80%; width: 160px ; font-size:10px ; color:white ; margin-right: 15px">
+    <span
+      style="
+        text-align: right;
+        top: 80%;
+        width: 160px;
+        font-size: 10px;
+        color: white;
+        margin-right: 15px;
+      "
+    >
       14</span
     >
   </div>
@@ -83,21 +109,24 @@ export default {
   methods: {
     valueToPercent() {
       const max = 14;
+      if (this.getget > max) {
+        return 100;
+      }
       return (this.getget / max) * 100;
     },
     updateColor() {
-      if(this.getget >9.5 || this.getget < 4.5){
-      this.chartOptions = {
-        fill: {
-          colors: ["#f00"],
-        },
-      };
-      } else{
-      this.chartOptions = {
-        fill: {
-          colors: ["#66e35f"],
-        },
-      };
+      if (this.getget > 9.5 || this.getget < 4.5) {
+        this.chartOptions = {
+          fill: {
+            colors: ["#f00"],
+          },
+        };
+      } else {
+        this.chartOptions = {
+          fill: {
+            colors: ["#66e35f"],
+          },
+        };
       }
     },
     getRandomArbitrary() {
@@ -109,7 +138,7 @@ export default {
         this.series.push(parseInt(this.valueToPercent()));
       }, 1000);
       setInterval(() => {
-        this.updateColor()
+        this.updateColor();
       }, 1000);
     },
   },
