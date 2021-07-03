@@ -8,16 +8,16 @@
       :options="chartOptions"
       :series="series"
     ></apexchart>
-    <span style="text-align: left; top: 80%; width: 160px; position: absolute"
-      >&nbsp;&nbsp;&nbsp;&nbsp;0
+    <span style="text-align: left; top: 80%; width: 160px; position: absolute ; font-size:10px ; color:white ; margin-left: 20px"
+      > 0
     </span>
     <span
-      style="text-align: center; top: 80%; width: 160px; position: absolute"
+      style="text-align: center; top: 80%; width: 160px; position: absolute ; font-size:20px ; font-weight: bold "
     >
       {{ this.series[0] }}
     </span>
-    <span style="text-align: right; top: 80%; width: 160px; position: absolute">
-      100&nbsp;&nbsp;&nbsp;</span
+    <span style="text-align: right; top: 80%; width: 160px ; font-size:10px ; color:white ; margin-right: 15px">
+      100</span
     >
   </div>
 </template>
@@ -30,9 +30,7 @@ export default {
     apexchart: VueApexCharts,
   },
   computed: {
-    ...mapGetters({ getget: "getCurrentORP" }),
-    ...mapGetters({ check: "getOnOffStatus" }),
-    ...mapGetters({ loading: "getSwitchStatus" }),
+    ...mapGetters({ getget: "getCurrentTemp" }),
   },
   data() {
     return {

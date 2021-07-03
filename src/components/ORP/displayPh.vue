@@ -1,13 +1,14 @@
 <template>
     <div >
+      <h5>PH</h5>
       <TChartORP class="dashgroup" />
       <BChartORP />
     </div>
 </template>
 
 <script>
-import BChartORP from "./BChartORP.vue";
-import TChartORP from "./TChartORP.vue";
+import BChartORP from "./BChartPh.vue";
+import TChartORP from "./TChartPh.vue";
 
 export default {
   components: {

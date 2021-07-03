@@ -19,7 +19,7 @@ export default {
     apexchart: VueApexCharts,
   },
   computed: {
-    ...mapGetters({ getget: "getCurrentORP", NewValue: "getPlusTen" }),
+    ...mapGetters({ getget: "getCurrentPh", NewValue: "getPlusTen" }),
   },
   data() {
     return {
@@ -105,7 +105,7 @@ export default {
           },
         },
         yaxis: {
-          max: 40,
+          max: 14,
           min: 0,
           tickAmount:7,
           labels: {

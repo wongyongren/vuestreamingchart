@@ -105,7 +105,7 @@ export default {
           },
         },
         yaxis: {
-          max: 40,
+          max: 1400,
           min: 0,
           tickAmount:7,
           labels: {
@@ -139,12 +139,10 @@ export default {
           ...this.series[0].data.splice(1),
           parseInt(this.getget),
         ];
-        //console.log("array", testing);
-        // this.series[0].data.push(parseInt(this.getRandomArbitrary(0, 10)));
+
         this.chartOptions.xaxis.categories.push(
           this.time.toLocaleTimeString("en-US")
         );
-        //this.series[0].data.splice(0, 1);
         this.series[0].data = [...testing];
         this.chartOptions.xaxis.categories.splice(0, 1);
       }, 500);

@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="row">
     <Displayorp class="product" />
-        <Displaytemp class="product" />
-            <Displayph class="product" />
+    <Displaytemp class="product" />
+    <Displayph class="product" />
   </div>
 </template>
 
@@ -17,15 +17,20 @@ export default {
   components: {
     Displayorp,
     Displaytemp,
-    Displayph
+    Displayph,
   },
   methods: {
-    ...mapActions(["getLastStatus"]),
     ...mapActions(["setORP"]),
+        ...mapActions(["setTemp"]),
+            ...mapActions(["setPh"]),
   },
   mounted() {
     this.setORP();
+    this.setTemp();
+    this.setPh();
     setInterval(this.setORP, 10000);
+    setInterval(this.setTemp, 10000);
+    setInterval(this.setPh, 10000);
   },
 };
 </script>
