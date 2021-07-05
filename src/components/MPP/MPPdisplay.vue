@@ -68,9 +68,9 @@ h5 {
 }
 .dashboard-main {
   padding: 5px;
-  margin-top: 0.5rem;
   border-radius: 5px;
-  margin: 1px;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
   background-color: #111516;
   color: #66e35f;
   box-shadow: 0 0.125rem 0.3rem rgba(0, 0, 0, 0.85) !important;
