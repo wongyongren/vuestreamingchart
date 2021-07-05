@@ -4,7 +4,8 @@
     <displayORP/>
     <displayTemp/>
     <displayPh/>
-    
+    <displaySalinity/>
+    <displayDO/>
   </div>
 
 </template>
@@ -13,12 +14,16 @@
 import displayORP from "./displayORP.vue";
 import displayTemp from "./displayTemp.vue";
 import displayPh from "./displayPh.vue";
+import displaySalinity from "./displaySalinity.vue";
+import displayDO from "./displayDo1.vue";
 
 export default {
   components: {
     displayORP,
     displayTemp,
     displayPh,
+    displaySalinity,
+    displayDO
   },
 };
 </script>
@@ -30,5 +35,6 @@ export default {
 .row .product {
   margin: 2px;
 }
+
 </style>
 

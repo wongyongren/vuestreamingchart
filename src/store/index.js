@@ -9,6 +9,8 @@ export default new Vuex.Store({
     currentORP: "",
     currentTemp: "",
     currentPh: "",
+    currentSalinity:"",
+    currentDO:"",
   },
   mutations: {
     //syncrous
@@ -21,11 +23,17 @@ export default new Vuex.Store({
     setPh(state, payload) {
       state.currentPh = payload;
     },
+    setSalinity(state, payload) {
+      state.currentSalinity = payload;
+    },
+    setDo(state, payload) {
+      state.currentDO = payload;
+    },
   },
   actions: {
     //asyncronous
     async setORP(state) {
-      const random = Math.floor(Math.random() * 1000);
+      const random = Math.floor(Math.random() * 1400);
       state.commit("setORP", random);
     },
     async setTemp(state) {
@@ -36,12 +44,22 @@ export default new Vuex.Store({
       const random = Math.floor(Math.random() * 14);
       state.commit("setPh", random);
     },
+    async setSalinity(state) {
+      const random = Math.floor(Math.random() * 40);
+      state.commit("setSalinity", random);
+    },
+    async setDo(state) {
+      const random = Math.floor(Math.random() * 12);
+      state.commit("setDo", random);
+    },
   },
   modules: {},
   getters: {
     getCurrentORP: state => state.currentORP,
     getCurrentTemp: state => state.currentTemp,
     getCurrentPh: state => state.currentPh,
-    getPlusTen: state => state.currentORP + 10,
+    getCurrentSalinity: state => state.currentSalinity,
+    getCurrentDO: state => state.currentDO,
+    //getPlusTen: state => state.currentORP + 10,
   }
 });
