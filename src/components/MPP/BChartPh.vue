@@ -38,7 +38,7 @@ export default {
 
       chartOptions: {
         chart: {
-          height: 250,
+          parentHeightOffset: 0,
           id: "realtime",
           animations: {
             enabled: true,

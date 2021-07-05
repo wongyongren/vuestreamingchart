@@ -38,7 +38,7 @@ export default {
 
       chartOptions: {
         chart: {
-          height: 250,
+          parentHeightOffset: 0,
           id: "realtime",
           animations: {
             enabled: true,
@@ -107,7 +107,7 @@ export default {
         yaxis: {
           max: 40,
           min: 0,
-          tickAmount:7,
+          tickAmount: 7,
           labels: {
             style: {
               colors: "white",
