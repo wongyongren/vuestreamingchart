@@ -1,6 +1,6 @@
 <template>
-    <div >
-      <h5>PH</h5>
+    <div class="dashboard-main">
+      <h5 style="text-align: center">PH</h5>
       <TChartORP class="dashgroup" />
       <BChartORP />
     </div>
@@ -24,6 +24,15 @@ export default {
   display: flex;
   display: -webkit-flex;
   flex-wrap: wrap;
+}
+.dashboard-main {
+  padding: 5px;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  margin: 1px;
+  background-color: #111516;
+  color: #66e35f;
+  box-shadow: 0 0.125rem 0.3rem rgba(0, 0, 0, 0.85) !important;
 }
 </style>
 

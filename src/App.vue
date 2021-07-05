@@ -1,23 +1,24 @@
 <template>
   <div id="app" class="row">
-    <Displayorp class="product" />
-    <Displaytemp class="product" />
-    <Displayph class="product" />
+    <div class="row">
+      <ORPDisplay class="product"/>
+    </div>
+    <div class="row">
+      <MPPDisplay class="product"/>
+    </div>
   </div>
 </template>
 
 <script>
-import Displayorp from "./components/ORP/displayORP.vue";
-import Displaytemp from "./components/ORP/displayTemp.vue";
-import Displayph from "./components/ORP/displayPh.vue";
+import ORPDisplay from "./components/ORP/ORPdisplay.vue";
+import MPPDisplay from "./components/MPP/MPPdisplay.vue";
 import { mapActions } from "vuex";
 export default {
   name: "app",
 
   components: {
-    Displayorp,
-    Displaytemp,
-    Displayph,
+    ORPDisplay,
+    MPPDisplay,
   },
   methods: {
     ...mapActions(["setORP"]),
