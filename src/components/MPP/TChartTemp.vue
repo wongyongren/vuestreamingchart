@@ -20,7 +20,7 @@
       >
         20
       </div>
-      <div class="get-value"      >
+      <div class="get-value">
         {{ this.getget }}
       </div>
       <div
@@ -75,7 +75,6 @@ export default {
               },
               value: {
                 show: false,
-
               },
             },
           },

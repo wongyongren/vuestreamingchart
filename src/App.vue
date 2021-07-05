@@ -1,9 +1,11 @@
 <template>
-  <div id="app" class="row">
-    <div class="row">
+  <div id="app" class="row main">
+    <div class="row card">
+      <h5 style="text-align: center; color: white">ORP</h5>
       <ORPDisplay class="product" />
     </div>
-    <div class="row">
+    <div class="row card">
+      <h5 style="text-align: center; color: white">MPP</h5>
       <MPPDisplay class="product" />
     </div>
   </div>
@@ -50,7 +52,27 @@ export default {
 .row .product {
   margin: 2px;
 }
-h5{
-margin:0px;
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background: #202940;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 2px 6px 15px 0px rgb(69 65 78 / 10%);
+  -moz-box-shadow: 2px 6px 15px 0px rgba(69, 65, 78, 0.1);
+  box-shadow: 2px 6px 15px 0px rgb(69 65 78 / 10%);
+  border: 0px;
+      margin-right: .5rem!important;
+
 }
+
 </style>
