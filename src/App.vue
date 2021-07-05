@@ -50,4 +50,7 @@ export default {
 .row .product {
   margin: 2px;
 }
+h5{
+margin:0px;
+}
 </style>

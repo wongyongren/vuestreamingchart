@@ -1,13 +1,11 @@
 <template>
   <div class="row">
-
-    <displayORP/>
-    <displayTemp/>
-    <displayPh/>
-    <displaySalinity/>
-    <displayDO/>
+    <displayORP />
+    <displayTemp />
+    <displayPh />
+    <displaySalinity />
+    <displayDO />
   </div>
-
 </template>
 
 <script>
@@ -23,11 +21,29 @@ export default {
     displayTemp,
     displayPh,
     displaySalinity,
-    displayDO
+    displayDO,
   },
 };
 </script>
 <style>
+.get-value {
+  text-align: center;
+  top: 80%;
+  font-weight: bold;
+  width: 50px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: Arial;
+  font-size: 20px;
+  fill-opacity: 1;
+}
+
+h5 {
+  margin: 0px;
+  font-size: 0.9125rem;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+}
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -36,7 +52,7 @@ export default {
   margin: 2px;
 }
 .dashboard-size {
-  width: 150px;
+  width: 160px;
 }
 .status {
   display: flex;

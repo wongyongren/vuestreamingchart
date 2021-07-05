@@ -3,22 +3,38 @@
     <apexchart
       ref="realtimeChart"
       type="radialBar"
-      height="180"
+      height="160"
       width="160"
       :options="chartOptions"
       :series="series"
     ></apexchart>
-    <span style="text-align: left; top: 80%; width: 160px; position: absolute ; font-size:10px ; color:white ; margin-left: 20px"
-      > 20
-    </span>
-    <span
-      style="text-align: center; top: 80%; width: 160px; position: absolute ; font-size:20px ; font-weight: bold "
-    >
-      {{ this.getget }}
-    </span>
-    <span style="text-align: right; top: 80%; width: 160px ; font-size:10px ; color:white ; margin-right: 15px">
-      34</span
-    >
+    <div class="row" style="width: 160px">
+      <div
+        style="
+          text-align: center;
+          top: 80%;
+          font-size: 10px;
+          color: white;
+          width: 55px;
+        "
+      >
+        20
+      </div>
+      <div class="get-value"      >
+        {{ this.getget }}
+      </div>
+      <div
+        style="
+          text-align: center;
+          top: 80%;
+          font-size: 10px;
+          color: white;
+          width: 55px;
+        "
+      >
+        34
+      </div>
+    </div>
   </div>
 </template>
 
@@ -50,8 +66,8 @@ export default {
             endAngle: 90,
             track: {
               background: "#ffffff",
-              strokeWidth: "97",
-              margin: 5, // margin is in pixels
+              strokeWidth: "100",
+              margin: 1, // margin is in pixels
             },
             dataLabels: {
               name: {
@@ -59,11 +75,7 @@ export default {
               },
               value: {
                 show: false,
-                offsetY: -2,
-                fontSize: "22px",
-                formatter: function (val) {
-                  return val;
-                },
+
               },
             },
           },
@@ -84,24 +96,24 @@ export default {
     valueToPercent() {
       const min = 20;
       const max = 34;
-      if (this.getget > max){
+      if (this.getget > max) {
         return 100;
       }
-      return ((this.getget - min) / (max-min)  *100);
+      return ((this.getget - min) / (max - min)) * 100;
     },
     updateColor() {
-      if(this.series >80 || this.series <20 ){
-      this.chartOptions = {
-        fill: {
-          colors: ["#f00"],
-        },
-      };
-      } else{
-      this.chartOptions = {
-        fill: {
-          colors: ["#66e35f"],
-        },
-      };
+      if (this.series > 80 || this.series < 20) {
+        this.chartOptions = {
+          fill: {
+            colors: ["#f00"],
+          },
+        };
+      } else {
+        this.chartOptions = {
+          fill: {
+            colors: ["#66e35f"],
+          },
+        };
       }
     },
     getRandomArbitrary() {
@@ -113,7 +125,7 @@ export default {
         this.series.push(parseInt(this.valueToPercent()));
       }, 1000);
       setInterval(() => {
-        this.updateColor()
+        this.updateColor();
       }, 1000);
     },
   },

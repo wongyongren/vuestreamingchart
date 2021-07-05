@@ -1,12 +1,9 @@
 <template>
   <div class="row">
-
-    <displayORP/>
-    <displayTemp/>
-    <displayPh/>
-    
+    <displayORP />
+    <displayTemp />
+    <displayPh />
   </div>
-
 </template>
 
 <script>
@@ -23,6 +20,9 @@ export default {
 };
 </script>
 <style>
+h5 {
+  margin: 0px;
+}
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -31,7 +31,7 @@ export default {
   margin: 2px;
 }
 .dashboard-size {
-  width: 150px;
+  width: 160px;
 }
 .status {
   display: flex;
