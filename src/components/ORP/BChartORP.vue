@@ -1,9 +1,9 @@
 <template>
-  <div id="chart" class="dashboard-item1">
+  <div id="chart" class="dashboard-size">
     <apexchart
       ref="realtimeChart"
       type="area"
-      height="265"
+      height="150"
       :options="chartOptions"
       :series="series"
     ></apexchart>
@@ -38,7 +38,7 @@ export default {
 
       chartOptions: {
         chart: {
-          height: 250,
+          //height: 250,
           id: "realtime",
           animations: {
             enabled: true,
@@ -184,19 +184,3 @@ export default {
 };
 </script>
 
-<style scoped>
-.dashboard-item1 {
-  width: 160px;
-  padding: 5px;
-  margin-top: 0.5rem;
-  border-radius: 5px;
-  background-color: #111516;
-  color: #66e35f;
-  box-shadow: 0 0.125rem 0.3rem rgba(0, 0, 0, 0.85) !important;
-}
-.status {
-  display: flex;
-  align-items: center;
-  color: aqua;
-}
-</style>

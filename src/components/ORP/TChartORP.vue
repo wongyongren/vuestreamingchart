@@ -1,5 +1,5 @@
 <template>
-  <div id="chart" class="dashboard-item">
+  <div id="chart" >
     <apexchart
       ref="realtimeChart"
       type="radialBar"
@@ -143,16 +143,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.dashboard-item {
-  height: 250px;
-  width: 160px;
-  padding: 5px;
-  margin-top: 0.5rem;
-  border-radius: 5px;
-  background-color: #111516;
-  color: #66e35f;
-  box-shadow: 0 0.125rem 0.3rem rgba(0, 0, 0, 0.85) !important;
-}
-</style>
