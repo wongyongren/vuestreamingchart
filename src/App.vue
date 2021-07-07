@@ -1,26 +1,33 @@
 <template>
   <div id="app" class="row main">
-    <div class="row card">
+    <!-- <div class="row card">
       <h5 style="text-align: center; color: white">ORP</h5>
       <ORPDisplay class="product" />
     </div>
     <div class="row card">
       <h5 style="text-align: center; color: white">MPP</h5>
       <MPPDisplay class="product" />
+    </div> -->
+    <div class="row card">
+      <h5 style="text-align: center; color: white">ORP</h5>
+      <display class="product" />
     </div>
+
   </div>
 </template>
 
 <script>
-import ORPDisplay from "./components/ORP/ORPdisplay.vue";
-import MPPDisplay from "./components/MPP/MPPdisplay.vue";
+// import ORPDisplay from "./components/ORP/ORPdisplay.vue";
+// import MPPDisplay from "./components/MPP/MPPdisplay.vue";
+import display from "./components/display/ORPdisplay.vue";
 import { mapActions } from "vuex";
 export default {
   name: "app",
 
   components: {
-    ORPDisplay,
-    MPPDisplay,
+    display,
+    // ORPDisplay,
+    // MPPDisplay,
   },
   methods: {
     ...mapActions(["setORP"]),
@@ -71,8 +78,6 @@ export default {
   -moz-box-shadow: 2px 6px 15px 0px rgba(69, 65, 78, 0.1);
   box-shadow: 2px 6px 15px 0px rgb(69 65 78 / 10%);
   border: 0px;
-      margin-right: .5rem!important;
-
+  margin-right: 0.5rem !important;
 }
-
 </style>

@@ -6,6 +6,40 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    currentR1:{
+      orpOrp:{
+        upperlimit:"380",
+        lowerlimit:"240"
+      },
+      orpTemp:{
+        upperlimit:"32",
+        lowerlimit:"25"
+      },
+      orpPh:{
+        upperlimit:"9.5",
+        lowerlimit:"4.5"
+      },
+      mppORP:{
+        upperlimit:"380",
+        lowerlimit:"240"
+      },
+      mppTemp:{
+        upperlimit:"32",
+        lowerlimit:"25"
+      },
+      mppPh:{
+        upperlimit:"9.5",
+        lowerlimit:"4.5"
+      },
+      mppSal:{
+        upperlimit:"25",
+        lowerlimit:"18"
+      },
+      mppDO:{
+        upperlimit:"8",
+        lowerlimit:"4"
+      },
+    },
     currentORP: "",
     currentTemp: "",
     currentPh: "",
@@ -14,6 +48,9 @@ export default new Vuex.Store({
   },
   mutations: {
     //syncrous
+    setR1(state, payload) {
+      state.currentR1 = payload;
+    },
     setORP(state, payload) {
       state.currentORP = payload;
     },
@@ -60,6 +97,7 @@ export default new Vuex.Store({
     getCurrentPh: state => state.currentPh,
     getCurrentSalinity: state => state.currentSalinity,
     getCurrentDO: state => state.currentDO,
+    getCurrentR1: state => state.currentR1,
     //getPlusTen: state => state.currentORP + 10,
   }
 });
