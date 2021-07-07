@@ -5,7 +5,7 @@
     <display :title="ph" :upperlimit="chartData.upperlimit" :lowerlimit="chartData.lowerlimit" />
     <display :title="sal" :upperlimit="chartData.upperlimit" :lowerlimit="chartData.lowerlimit" />
     <display :title="do1" :upperlimit="chartData.upperlimit" :lowerlimit="chartData.lowerlimit" /> -->
-    <display :title="this.getget.mppORP" :upperlimit="this.getget.mppORP.upperlimit" :lowerlimit="this.getget.mppORP.lowerlimit"/>
+    <display :title="getget.mppORP" :upperlimit="getget.mppORP.upperlimit" :lowerlimit="getget.mppORP.lowerlimit"/>
   </div>
 </template>
 
