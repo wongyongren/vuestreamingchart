@@ -42,11 +42,11 @@ export default {
     this.setPh();
     this.setSalinity();
     this.setDo();
-    setInterval(this.setORP, 10000);
-    setInterval(this.setTemp, 10000);
-    setInterval(this.setPh, 10000);
-    setInterval(this.setSalinity, 10000);
-    setInterval(this.setDo, 10000);
+    setInterval(this.setORP, 20000);
+    setInterval(this.setTemp, 20000);
+    setInterval(this.setPh, 20000);
+    setInterval(this.setSalinity, 20000);
+    setInterval(this.setDo, 20000);
   },
 };
 </script>

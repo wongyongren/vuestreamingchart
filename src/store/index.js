@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     currentR1:{
       orpOrp:{
+        title:"ORP",
         max:"1400",
         min:"0",
         currentValue: "",
@@ -16,6 +17,7 @@ export default new Vuex.Store({
         current: "getCurrentORP",
       },
       orpTemp:{
+        title:"Temp",
         max:"35",
         min:"22",
         currentValue: "",
@@ -24,6 +26,7 @@ export default new Vuex.Store({
         current: "getCurrentTemp"
       },
       orpPh:{
+        title:"Ph",
         max:"14",
         min:"0",
         currentValue: "",
@@ -32,6 +35,7 @@ export default new Vuex.Store({
         current: "getCurrentPh"
       },
       mppOrp:{
+        title:"ORP",
         max:"1400",
         min:"0",
         currentValue: "",
@@ -40,6 +44,7 @@ export default new Vuex.Store({
         current: "getCurrentORP"
       },
       mppTemp:{
+        title:"Temp",
         max:"35",
         min:"22",
         currentValue: "",
@@ -48,6 +53,7 @@ export default new Vuex.Store({
         current: "getCurrentORP"
       },
       mppPh:{
+        title:"Ph",
         max:"14",
         min:"0",
         currentValue: "",
@@ -56,6 +62,7 @@ export default new Vuex.Store({
         current: "getCurrentORP"
       },
       mppSal:{
+        title:"Salinity",
         max:"32",
         min:"0",
         currentValue: "",
@@ -64,6 +71,7 @@ export default new Vuex.Store({
         current: "getCurrentORP"
       },
       mppDO:{
+        title:"DO",
         max:"14",
         min:"0",
         currentValue: "",
@@ -112,7 +120,7 @@ export default new Vuex.Store({
       state.commit("setPh", random);
     },
     async setSalinity(state) {
-      const random = Math.floor(Math.random() * 40);
+      const random = Math.floor(Math.random() * 32);
       state.commit("setSalinity", random);
     },
     async setDo(state) {
