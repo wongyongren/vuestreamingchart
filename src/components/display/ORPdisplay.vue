@@ -1,11 +1,11 @@
 <template>
   <div class="row">
-    <!-- <display :title="orp" :upperlimit="chartData.upperlimit" :lowerlimit="chartData.lowerlimit" />
-    <display :title="temp" :upperlimit="chartData.upperlimit" :lowerlimit="chartData.lowerlimit" />
-    <display :title="ph" :upperlimit="chartData.upperlimit" :lowerlimit="chartData.lowerlimit" />
-    <display :title="sal" :upperlimit="chartData.upperlimit" :lowerlimit="chartData.lowerlimit" />
-    <display :title="do1" :upperlimit="chartData.upperlimit" :lowerlimit="chartData.lowerlimit" /> -->
+
     <display :title="getget.mppORP" :upperlimit="getget.mppORP.upperlimit" :lowerlimit="getget.mppORP.lowerlimit"/>
+    <display :title="getget.mppTemp" :upperlimit="getget.mppTemp.upperlimit" :lowerlimit="getget.mppTemp.lowerlimit"/>
+    <display :title="getget.mppPh" :upperlimit="getget.mppPh.upperlimit" :lowerlimit="getget.mppPh.lowerlimit"/>
+    <display :title="getget.mppSal" :upperlimit="getget.mppSal.upperlimit" :lowerlimit="getget.mppSal.lowerlimit"/>
+    <display :title="getget.mppDO" :upperlimit="getget.mppDO.upperlimit" :lowerlimit="getget.mppDO.lowerlimit"/>
   </div>
 </template>
 
