@@ -42,7 +42,7 @@
 import VueApexCharts from "vue-apexcharts";
 import { mapGetters } from "vuex";
 export default {
-    props:['upperlimit','title','lowerlimit'],
+    props:['title'],
   components: {
     apexchart: VueApexCharts,
   },
@@ -101,7 +101,7 @@ export default {
       return (this.title.currentValue / max) * 100;
     },
     updateColor() {
-      if (this.series > this.upperlimit || this.series < this.lowerlimit) {
+      if (this.series > this.title.upperlimit || this.series < this.title.lowerlimit) {
         this.chartOptions = {
           fill: {
             colors: ["#f00"],

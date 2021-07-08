@@ -31,36 +31,47 @@ export default new Vuex.Store({
         lowerlimit:"4.5",
         current: "getCurrentPh"
       },
-      mppORP:{
+      mppOrp:{
+        max:"1400",
+        min:"0",
+        currentValue: "",
         upperlimit:"380",
         lowerlimit:"240",
         current: "getCurrentORP"
       },
       mppTemp:{
+        max:"35",
+        min:"22",
+        currentValue: "",
         upperlimit:"32",
         lowerlimit:"25",
         current: "getCurrentORP"
       },
       mppPh:{
+        max:"14",
+        min:"0",
+        currentValue: "",
         upperlimit:"9.5",
         lowerlimit:"4.5",
         current: "getCurrentORP"
       },
       mppSal:{
+        max:"32",
+        min:"0",
+        currentValue: "",
         upperlimit:"25",
         lowerlimit:"18",
         current: "getCurrentORP"
       },
       mppDO:{
+        max:"14",
+        min:"0",
+        currentValue: "",
         upperlimit:"8",
         lowerlimit:"4",
         current: "getCurrentORP"
       },
     },
-    currentTemp: "",
-    currentPh: "",
-    currentSalinity:"",
-    currentDO:"",
   },
   mutations: {
     //syncrous
@@ -69,18 +80,21 @@ export default new Vuex.Store({
     },
     setORP(state, payload) {
       state.currentR1.orpOrp.currentValue = payload;
+      state.currentR1.mppOrp.currentValue = payload;
     },
     setTemp(state, payload) {
       state.currentR1.orpTemp.currentValue = payload;
+      state.currentR1.mppTemp.currentValue = payload;
     },
     setPh(state, payload) {
       state.currentR1.orpPh.currentValue = payload;
+      state.currentR1.mppPh.currentValue = payload;
     },
     setSalinity(state, payload) {
-      state.currentSalinity = payload;
+      state.currentR1.mppSal.currentValue = payload;
     },
     setDo(state, payload) {
-      state.currentDO = payload;
+      state.currentR1.mppDO.currentValue = payload;
     },
   },
   actions: {
@@ -108,11 +122,11 @@ export default new Vuex.Store({
   },
   modules: {},
   getters: {
-    getCurrentORP: state => state.currentR1.orpOrp.currentValue,
-    getCurrentTemp: state => state.currentR1.orpTemp.currentValue,
-    getCurrentPh: state => state.currentR1.orpPh.currentValue,
-    getCurrentSalinity: state => state.currentSalinity,
-    getCurrentDO: state => state.currentDO,
+    // getCurrentORP: state => state.currentR1.orpOrp.currentValue,
+    // getCurrentTemp: state => state.currentR1.orpTemp.currentValue,
+    // getCurrentPh: state => state.currentR1.orpPh.currentValue,
+    // getCurrentSalinity: state => state.currentSalinity,
+    // getCurrentDO: state => state.currentDO,
     getCurrentR1: state => state.currentR1,
     // getPlusTen: state => state.currentR1.orpOrp.currentORP + 10,
   }

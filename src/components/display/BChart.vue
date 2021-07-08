@@ -8,9 +8,10 @@
       :series="series"
     ></apexchart>
     <div>
-      {{ title.upperlimit }} // {{ title.lowerlimit }} // {{ title.current }} //
-      {{ title.currentValue }} //
-      {{ title.max }}
+      Upper Limit {{ title.upperlimit }} // <br>
+      Lower Limit {{ title.lowerlimit }} //<br>
+      Current Value {{ title.currentValue }} //<br>
+      Max Value {{ title.max }}
     </div>
   </div>
 </template>

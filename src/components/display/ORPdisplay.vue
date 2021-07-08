@@ -1,11 +1,14 @@
 <template>
   <div class="row">
+    <display :title="getget.orpOrp" />
+    <display :title="getget.orpTemp" />
+    <display :title="getget.orpPh" />
 
-    <display :title="getget.orpOrp" :upperlimit="getget.orpOrp.upperlimit" :lowerlimit="getget.orpOrp.lowerlimit"/>
-    <display :title="getget.orpTemp" :upperlimit="getget.orpTemp.upperlimit" :lowerlimit="getget.orpTemp.lowerlimit"/>
-    <display :title="getget.orpPh" :upperlimit="getget.orpPh.upperlimit" :lowerlimit="getget.orpPh.lowerlimit"/>
-    <!-- <display :title="getget.orpSal" :upperlimit="getget.orpSal.upperlimit" :lowerlimit="getget.orpSal.lowerlimit"/>
-    <display :title="getget.orpDO" :upperlimit="getget.orpDO.upperlimit" :lowerlimit="getget.orpDO.lowerlimit"/> -->
+    <display :title="getget.mppOrp" />
+    <display :title="getget.mppTemp" />
+    <display :title="getget.mppPh" />
+    <display :title="getget.mppSal" />
+    <display :title="getget.mppDO" />
   </div>
 </template>
 
