@@ -7,7 +7,12 @@
       :options="chartOptions"
       :series="series"
     ></apexchart>
+  <div>
+        {{upperlimit}}
+        {{title}}
   </div>
+  </div>
+  
 </template>
 <script>
 //import { Line } from "vue-chartjs";
@@ -18,6 +23,7 @@ export default {
   components: {
     apexchart: VueApexCharts,
   },
+  props:['upperlimit','title','lowerlimit'],
   computed: {
     ...mapGetters({ getget: "getCurrentORP", NewValue: "getPlusTen" }),
   },
