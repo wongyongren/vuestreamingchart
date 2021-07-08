@@ -18,10 +18,10 @@
           width: 55px;
         "
       >
-        0
+        {{title.min}}
       </div>
       <div class="get-value">
-        {{ this.getget }}
+        {{ title.currentValue }}
       </div>
       <div
         style="
@@ -32,7 +32,7 @@
           width: 55px;
         "
       >
-        1400
+        {{title.max}}
       </div>
     </div>
   </div>
@@ -47,9 +47,7 @@ export default {
     apexchart: VueApexCharts,
   },
   computed: {
-    ...mapGetters({ getget: "getCurrentORP" }),
-    ...mapGetters({ check: "getOnOffStatus" }),
-    ...mapGetters({ loading: "getSwitchStatus" }),
+    ...mapGetters({ getget: "getCurrentR1" }),
   },
   data() {
     return {
@@ -96,11 +94,11 @@ export default {
   },
   methods: {
     valueToPercent() {
-      const max = 1400;
-      if (this.getget > max) {
+      const max = this.title.max;
+      if (this.title.currentValue > max) {
         return 100;
       }
-      return (this.getget / max) * 100;
+      return (this.title.currentValue / max) * 100;
     },
     updateColor() {
       if (this.series > this.upperlimit || this.series < this.lowerlimit) {

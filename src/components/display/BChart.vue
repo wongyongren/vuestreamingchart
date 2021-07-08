@@ -7,12 +7,12 @@
       :options="chartOptions"
       :series="series"
     ></apexchart>
-  <div>
-        {{upperlimit}}
-        {{title}}
+    <div>
+      {{ title.upperlimit }} // {{ title.lowerlimit }} // {{ title.current }} //
+      {{ title.currentValue }} //
+      {{ title.max }}
+    </div>
   </div>
-  </div>
-  
 </template>
 <script>
 //import { Line } from "vue-chartjs";
@@ -23,9 +23,9 @@ export default {
   components: {
     apexchart: VueApexCharts,
   },
-  props:['upperlimit','title','lowerlimit'],
+  props: ["title"],
   computed: {
-    ...mapGetters({ getget: "getCurrentORP", NewValue: "getPlusTen" }),
+    ...mapGetters({ getget: "getCurrentR1" }),
   },
   data() {
     return {
@@ -111,8 +111,6 @@ export default {
           },
         },
         yaxis: {
-          max: 1400,
-          min: 0,
           tickAmount: 7,
           labels: {
             style: {
@@ -127,23 +125,15 @@ export default {
     this.setDataLineChart();
   },
   methods: {
-    getRandomArbitrary() {
-      return Math.floor(Math.random() * 10);
-    },
     setDataLineChart() {
       setInterval(() => {
-        // if (this.getget >= 100) {
-        //   this.updateYMax();
-        // } else {
-        //   this.updateYNormal();
-        // }
         this.updateSeriesLine();
       }, 1000);
       setInterval(() => {
         this.time = new Date();
         const testing = [
           ...this.series[0].data.splice(1),
-          parseInt(this.getget),
+          parseInt(this.title.currentValue),
         ];
 
         this.chartOptions.xaxis.categories.push(
@@ -159,32 +149,6 @@ export default {
           data: this.series[0].data,
         },
       ]);
-    },
-    updateYMax() {
-      this.$refs.realtimeChart.updateOptions({
-        yaxis: {
-          max: this.NewValue,
-          min: 0,
-          labels: {
-            style: {
-              colors: "white",
-            },
-          },
-        },
-      });
-    },
-    updateYNormal() {
-      this.$refs.realtimeChart.updateOptions({
-        yaxis: {
-          max: 100,
-          min: 0,
-          labels: {
-            style: {
-              colors: "white",
-            },
-          },
-        },
-      });
     },
   },
 };

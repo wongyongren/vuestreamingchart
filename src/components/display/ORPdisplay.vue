@@ -1,11 +1,11 @@
 <template>
   <div class="row">
 
-    <display :title="getget.mppORP" :upperlimit="getget.mppORP.upperlimit" :lowerlimit="getget.mppORP.lowerlimit"/>
-    <display :title="getget.mppTemp" :upperlimit="getget.mppTemp.upperlimit" :lowerlimit="getget.mppTemp.lowerlimit"/>
-    <display :title="getget.mppPh" :upperlimit="getget.mppPh.upperlimit" :lowerlimit="getget.mppPh.lowerlimit"/>
-    <display :title="getget.mppSal" :upperlimit="getget.mppSal.upperlimit" :lowerlimit="getget.mppSal.lowerlimit"/>
-    <display :title="getget.mppDO" :upperlimit="getget.mppDO.upperlimit" :lowerlimit="getget.mppDO.lowerlimit"/>
+    <display :title="getget.orpOrp" :upperlimit="getget.orpOrp.upperlimit" :lowerlimit="getget.orpOrp.lowerlimit"/>
+    <display :title="getget.orpTemp" :upperlimit="getget.orpTemp.upperlimit" :lowerlimit="getget.orpTemp.lowerlimit"/>
+    <display :title="getget.orpPh" :upperlimit="getget.orpPh.upperlimit" :lowerlimit="getget.orpPh.lowerlimit"/>
+    <!-- <display :title="getget.orpSal" :upperlimit="getget.orpSal.upperlimit" :lowerlimit="getget.orpSal.lowerlimit"/>
+    <display :title="getget.orpDO" :upperlimit="getget.orpDO.upperlimit" :lowerlimit="getget.orpDO.lowerlimit"/> -->
   </div>
 </template>
 
@@ -18,11 +18,6 @@ export default {
   },
   computed: {
     ...mapGetters({ getget: "getCurrentR1" }),
-  },
-    mounted() {
-    console.log(this.getget)
-    console.log(this.getget.mppORP.upperlimit)
-    console.log(this.getget.mppORP.lowerlimit)
   },
 };
 </script>

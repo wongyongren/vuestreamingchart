@@ -8,39 +8,55 @@ export default new Vuex.Store({
   state: {
     currentR1:{
       orpOrp:{
+        max:"1400",
+        min:"0",
+        currentValue: "",
         upperlimit:"380",
-        lowerlimit:"240"
+        lowerlimit:"240",
+        current: "getCurrentORP",
       },
       orpTemp:{
+        max:"35",
+        min:"22",
+        currentValue: "",
         upperlimit:"32",
-        lowerlimit:"25"
+        lowerlimit:"25",
+        current: "getCurrentTemp"
       },
       orpPh:{
+        max:"14",
+        min:"0",
+        currentValue: "",
         upperlimit:"9.5",
-        lowerlimit:"4.5"
+        lowerlimit:"4.5",
+        current: "getCurrentPh"
       },
       mppORP:{
         upperlimit:"380",
-        lowerlimit:"240"
+        lowerlimit:"240",
+        current: "getCurrentORP"
       },
       mppTemp:{
         upperlimit:"32",
-        lowerlimit:"25"
+        lowerlimit:"25",
+        current: "getCurrentORP"
       },
       mppPh:{
         upperlimit:"9.5",
-        lowerlimit:"4.5"
+        lowerlimit:"4.5",
+        current: "getCurrentORP"
       },
       mppSal:{
         upperlimit:"25",
-        lowerlimit:"18"
+        lowerlimit:"18",
+        current: "getCurrentORP"
       },
       mppDO:{
         upperlimit:"8",
-        lowerlimit:"4"
+        lowerlimit:"4",
+        current: "getCurrentORP"
       },
     },
-    currentORP: "",
     currentTemp: "",
     currentPh: "",
     currentSalinity:"",
@@ -52,13 +68,13 @@ export default new Vuex.Store({
       state.currentR1 = payload;
     },
     setORP(state, payload) {
-      state.currentORP = payload;
+      state.currentR1.orpOrp.currentValue = payload;
     },
     setTemp(state, payload) {
-      state.currentTemp = payload;
+      state.currentR1.orpTemp.currentValue = payload;
     },
     setPh(state, payload) {
-      state.currentPh = payload;
+      state.currentR1.orpPh.currentValue = payload;
     },
     setSalinity(state, payload) {
       state.currentSalinity = payload;
@@ -92,12 +108,12 @@ export default new Vuex.Store({
   },
   modules: {},
   getters: {
-    getCurrentORP: state => state.currentORP,
-    getCurrentTemp: state => state.currentTemp,
-    getCurrentPh: state => state.currentPh,
+    getCurrentORP: state => state.currentR1.orpOrp.currentValue,
+    getCurrentTemp: state => state.currentR1.orpTemp.currentValue,
+    getCurrentPh: state => state.currentR1.orpPh.currentValue,
     getCurrentSalinity: state => state.currentSalinity,
     getCurrentDO: state => state.currentDO,
     getCurrentR1: state => state.currentR1,
-    //getPlusTen: state => state.currentORP + 10,
+    // getPlusTen: state => state.currentR1.orpOrp.currentORP + 10,
   }
 });
