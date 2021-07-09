@@ -1,10 +1,10 @@
 <template>
-  <div class="row" >
-    <display :title="title.currentR1.mppOrp" />
-    <display :title="title.currentR1.mppTemp" />
-    <display :title="title.currentR1.mppPh" />
-    <display :title="title.currentR1.mppSal" />
-    <display :title="title.currentR1.mppDO" />
+  <div class="row">
+      <display :title="title.mppOrp" />
+      <display :title="title.mppTemp" />
+      <display :title="title.mppPh" />
+      <display :title="title.mppSal" />
+      <display :title="title.mppDO" />
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   components: {
     display,
   },
-props: [ "title"],
+  props: ["title"],
 };
 </script>
 <style>

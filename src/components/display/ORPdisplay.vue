@@ -1,8 +1,8 @@
 <template>
   <div class="row">
-    <display :title="title.currentR1.orpOrp" />
-    <display :title="title.currentR1.orpTemp" />
-    <display :title="title.currentR1.orpPh" />
+    <display :title="title.orpOrp" />
+    <display :title="title.orpTemp" />
+    <display :title="title.orpPh" />
     
   </div>
 </template>

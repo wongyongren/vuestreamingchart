@@ -8,13 +8,17 @@
       <h5 style="text-align: center; color: white">MPP</h5>
       <MPPDisplay class="product" />
     </div> -->
-    <div class="row card">
-      <h5 style="text-align: center; color: white">ORP</h5>
-      <ORP class="product" :title="getget"/>
-    </div>
-    <div class="row card">
-      <h5 style="text-align: center; color: white">mpp</h5>
-      <MPP class="product" :title="getget"/>
+    <div v-for="item in getget" :key="item.status" class="row">
+      <h1>{{ item.title }}</h1>
+      <div class="row card">
+        {{ item.status }}
+        <h5 style="text-align: center; color: white">ORP</h5>
+        <ORP class="product" :title="item" />
+      </div>
+      <div class="row card">
+        <h5 style="text-align: center; color: white">MPP</h5>
+        <MPP class="product" :title="item" />
+      </div>
     </div>
   </div>
 </template>
@@ -28,7 +32,7 @@ import { mapGetters } from "vuex";
 import { mapActions } from "vuex";
 export default {
   name: "app",
-  props: [ "title"],
+  props: ["title"],
   components: {
     ORP,
     MPP,
@@ -36,26 +40,60 @@ export default {
     // MPPDisplay,
   },
   methods: {
-    ...mapActions(["setORP"]),
-    ...mapActions(["setTemp"]),
-    ...mapActions(["setPh"]),
-    ...mapActions(["setSalinity"]),
-    ...mapActions(["setDo"]),
+    ...mapActions(["setORP1"]),
+    ...mapActions(["setTemp1"]),
+    ...mapActions(["setPh1"]),
+    ...mapActions(["setSalinity1"]),
+    ...mapActions(["setDo1"]),
+
+    ...mapActions(["setORP2"]),
+    ...mapActions(["setTemp2"]),
+    ...mapActions(["setPh2"]),
+    ...mapActions(["setSalinity2"]),
+    ...mapActions(["setDo2"]),
+
+    ...mapActions(["setORP3"]),
+    ...mapActions(["setTemp3"]),
+    ...mapActions(["setPh3"]),
+    ...mapActions(["setSalinity3"]),
+    ...mapActions(["setDo3"]),
   },
-    computed: {
+  computed: {
     ...mapGetters({ getget: "getCurrentR1" }),
   },
   mounted() {
-    this.setORP();
-    this.setTemp();
-    this.setPh();
-    this.setSalinity();
-    this.setDo();
-    setInterval(this.setORP, 20000);
-    setInterval(this.setTemp, 20000);
-    setInterval(this.setPh, 20000);
-    setInterval(this.setSalinity, 20000);
-    setInterval(this.setDo, 20000);
+    this.setORP1();
+    this.setTemp1();
+    this.setPh1();
+    this.setSalinity1();
+    this.setDo1();
+    setInterval(this.setORP1, 20000);
+    setInterval(this.setTemp1, 20000);
+    setInterval(this.setPh1, 20000);
+    setInterval(this.setSalinity1, 20000);
+    setInterval(this.setDo1, 20000);
+
+    this.setORP2();
+    this.setTemp2();
+    this.setPh2();
+    this.setSalinity2();
+    this.setDo2();
+    setInterval(this.setORP2, 20000);
+    setInterval(this.setTemp2, 20000);
+    setInterval(this.setPh2, 20000);
+    setInterval(this.setSalinity2, 20000);
+    setInterval(this.setDo2, 20000);
+
+    this.setORP3();
+    this.setTemp3();
+    this.setPh3();
+    this.setSalinity3();
+    this.setDo3();
+    setInterval(this.setORP3, 20000);
+    setInterval(this.setTemp3, 20000);
+    setInterval(this.setPh3, 20000);
+    setInterval(this.setSalinity3, 20000);
+    setInterval(this.setDo3, 20000);
   },
 };
 </script>

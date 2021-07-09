@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     status:{
       currentR1:{
+        title:"currentR1",
         orpOrp:{
           title:"ORP",
           max:"1400",
@@ -74,6 +75,7 @@ export default new Vuex.Store({
         },
       },
       currentR2:{
+        title:"currentR2",
         orpOrp:{
           title:"ORP",
           max:"1400",
@@ -140,6 +142,7 @@ export default new Vuex.Store({
         },
       },
       currentR3:{
+        title:"currentR3",
         orpOrp:{
           title:"ORP",
           max:"1400",
@@ -212,63 +215,127 @@ export default new Vuex.Store({
     setStatus(state, payload) {
       state.status = payload;
     },
-    setORP(state, payload) {
+    setORP1(state, payload) {
       state.status.currentR1.orpOrp.currentValue = payload;
       state.status.currentR1.mppOrp.currentValue = payload;
+    },
+    setORP2(state, payload) {
       state.status.currentR2.orpOrp.currentValue = payload;
       state.status.currentR2.mppOrp.currentValue = payload;
+    },
+    setORP3(state, payload) {
       state.status.currentR3.orpOrp.currentValue = payload;
       state.status.currentR3.mppOrp.currentValue = payload;
     },
-    setTemp(state, payload) {
+    setTemp1(state, payload) {
       state.status.currentR1.orpTemp.currentValue = payload;
       state.status.currentR1.mppTemp.currentValue = payload;
+    },
+    setTemp2(state, payload) {
       state.status.currentR2.orpTemp.currentValue = payload;
       state.status.currentR2.mppTemp.currentValue = payload;
+    },
+    setTemp3(state, payload) {
       state.status.currentR3.orpTemp.currentValue = payload;
       state.status.currentR3.mppTemp.currentValue = payload;
     },
-    setPh(state, payload) {
+    setPh1(state, payload) {
       state.status.currentR1.orpPh.currentValue = payload;
       state.status.currentR1.mppPh.currentValue = payload;
+    },
+    setPh2(state, payload) {
       state.status.currentR2.orpPh.currentValue = payload;
       state.status.currentR2.mppPh.currentValue = payload;
+    },
+    setPh3(state, payload) {
       state.status.currentR3.orpPh.currentValue = payload;
       state.status.currentR3.mppPh.currentValue = payload;
     },
-    setSalinity(state, payload) {
+    setSalinity1(state, payload) {
       state.status.currentR1.mppSal.currentValue = payload;
+    },
+    setSalinity2(state, payload) {
       state.status.currentR2.mppSal.currentValue = payload;
+    },
+    setSalinity3(state, payload) {
       state.status.currentR3.mppSal.currentValue = payload;
     },
-    setDo(state, payload) {
+    setDo1(state, payload) {
       state.status.currentR1.mppDO.currentValue = payload;
+    },
+    setDo2(state, payload) {
       state.status.currentR2.mppDO.currentValue = payload;
+    },
+    setDo3(state, payload) {
       state.status.currentR3.mppDO.currentValue = payload;
     },
   },
   actions: {
     //asyncronous
-    async setORP(state) {
+    async setORP1(state) {
       const random = Math.floor(Math.random() * 1400);
-      state.commit("setORP", random);
+      state.commit("setORP1", random);
     },
-    async setTemp(state) {
+    async setTemp1(state) {
       const random = Math.floor((Math.random() * (34 - 20 + 1 )) + 20);
-      state.commit("setTemp", random);
+      state.commit("setTemp1", random);
     },
-    async setPh(state) {
+    async setPh1(state) {
       const random = Math.floor(Math.random() * 14);
-      state.commit("setPh", random);
+      state.commit("setPh1", random);
     },
-    async setSalinity(state) {
+    async setSalinity1(state) {
       const random = Math.floor(Math.random() * 32);
-      state.commit("setSalinity", random);
+      state.commit("setSalinity1", random);
     },
-    async setDo(state) {
+    async setDo1(state) {
       const random = Math.floor(Math.random() * 12);
-      state.commit("setDo", random);
+      state.commit("setDo1", random);
     },
+    
+    async setORP2(state) {
+      const random = Math.floor(Math.random() * 1400);
+      state.commit("setORP2", random);
+    },
+    async setTemp2(state) {
+      const random = Math.floor((Math.random() * (34 - 20 + 1 )) + 20);
+      state.commit("setTemp2", random);
+    },
+    async setPh2(state) {
+      const random = Math.floor(Math.random() * 14);
+      state.commit("setPh2", random);
+    },
+    async setSalinity2(state) {
+      const random = Math.floor(Math.random() * 32);
+      state.commit("setSalinity2", random);
+    },
+    async setDo2(state) {
+      const random = Math.floor(Math.random() * 12);
+      state.commit("setDo2", random);
+    },
+
+    async setORP3(state) {
+      const random = Math.floor(Math.random() * 1400);
+      state.commit("setORP3", random);
+    },
+    async setTemp3(state) {
+      const random = Math.floor((Math.random() * (34 - 20 + 1 )) + 20);
+      state.commit("setTemp3", random);
+    },
+    async setPh3(state) {
+      const random = Math.floor(Math.random() * 14);
+      state.commit("setPh3", random);
+    },
+    async setSalinity3(state) {
+      const random = Math.floor(Math.random() * 32);
+      state.commit("setSalinity3", random);
+    },
+    async setDo3(state) {
+      const random = Math.floor(Math.random() * 12);
+      state.commit("setDo2", random);
+    },
+
+    
   },
   modules: {},
   getters: {
