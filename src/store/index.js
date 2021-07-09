@@ -6,206 +6,206 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    status:{
-      currentR1:{
-        title:"currentR1",
-        orpOrp:{
-          title:"ORP",
-          max:"1400",
-          min:"0",
+    status: {
+      currentR1: {
+        title: "R1",
+        orpOrp: {
+          title: "ORP",
+          max: "1400",
+          min: "0",
           currentValue: "",
-          upperlimit:"380",
-          lowerlimit:"240",
+          upperlimit: "380",
+          lowerlimit: "240",
         },
-        orpTemp:{
-          title:"Temp",
-          max:"35",
-          min:"22",
+        orpTemp: {
+          title: "Temp",
+          max: "35",
+          min: "22",
           currentValue: "",
-          upperlimit:"32",
-          lowerlimit:"25",
+          upperlimit: "32",
+          lowerlimit: "25",
         },
-        orpPh:{
-          title:"Ph",
-          max:"14",
-          min:"0",
+        orpPh: {
+          title: "Ph",
+          max: "14",
+          min: "0",
           currentValue: "",
-          upperlimit:"9.5",
-          lowerlimit:"4.5",
+          upperlimit: "9.5",
+          lowerlimit: "4.5",
         },
-        mppOrp:{
-          title:"ORP",
-          max:"1400",
-          min:"0",
+        mppOrp: {
+          title: "ORP",
+          max: "1400",
+          min: "0",
           currentValue: "",
-          upperlimit:"380",
-          lowerlimit:"240",
+          upperlimit: "380",
+          lowerlimit: "240",
         },
-        mppTemp:{
-          title:"Temp",
-          max:"35",
-          min:"22",
+        mppTemp: {
+          title: "Temp",
+          max: "35",
+          min: "22",
           currentValue: "",
-          upperlimit:"32",
-          lowerlimit:"25",
+          upperlimit: "32",
+          lowerlimit: "25",
         },
-        mppPh:{
-          title:"Ph",
-          max:"14",
-          min:"0",
+        mppPh: {
+          title: "Ph",
+          max: "14",
+          min: "0",
           currentValue: "",
-          upperlimit:"9.5",
-          lowerlimit:"4.5",
+          upperlimit: "9.5",
+          lowerlimit: "4.5",
         },
-        mppSal:{
-          title:"Salinity",
-          max:"32",
-          min:"0",
+        mppSal: {
+          title: "Salinity",
+          max: "32",
+          min: "0",
           currentValue: "",
-          upperlimit:"25",
-          lowerlimit:"18",
+          upperlimit: "25",
+          lowerlimit: "18",
         },
-        mppDO:{
-          title:"DO",
-          max:"14",
-          min:"0",
+        mppDO: {
+          title: "DO",
+          max: "14",
+          min: "0",
           currentValue: "",
-          upperlimit:"8",
-          lowerlimit:"4",
-        },
-      },
-      currentR2:{
-        title:"currentR2",
-        orpOrp:{
-          title:"ORP",
-          max:"1400",
-          min:"0",
-          currentValue: "",
-          upperlimit:"380",
-          lowerlimit:"240",
-        },
-        orpTemp:{
-          title:"Temp",
-          max:"35",
-          min:"22",
-          currentValue: "",
-          upperlimit:"32",
-          lowerlimit:"25",
-        },
-        orpPh:{
-          title:"Ph",
-          max:"14",
-          min:"0",
-          currentValue: "",
-          upperlimit:"9.5",
-          lowerlimit:"4.5",
-        },
-        mppOrp:{
-          title:"ORP",
-          max:"1400",
-          min:"0",
-          currentValue: "",
-          upperlimit:"380",
-          lowerlimit:"240",
-        },
-        mppTemp:{
-          title:"Temp",
-          max:"35",
-          min:"22",
-          currentValue: "",
-          upperlimit:"32",
-          lowerlimit:"25",
-        },
-        mppPh:{
-          title:"Ph",
-          max:"14",
-          min:"0",
-          currentValue: "",
-          upperlimit:"9.5",
-          lowerlimit:"4.5",
-        },
-        mppSal:{
-          title:"Salinity",
-          max:"32",
-          min:"0",
-          currentValue: "",
-          upperlimit:"25",
-          lowerlimit:"18",
-        },
-        mppDO:{
-          title:"DO",
-          max:"14",
-          min:"0",
-          currentValue: "",
-          upperlimit:"8",
-          lowerlimit:"4",
+          upperlimit: "8",
+          lowerlimit: "4",
         },
       },
-      currentR3:{
-        title:"currentR3",
-        orpOrp:{
-          title:"ORP",
-          max:"1400",
-          min:"0",
+      currentR2: {
+        title: "R2",
+        orpOrp: {
+          title: "ORP",
+          max: "1400",
+          min: "0",
           currentValue: "",
-          upperlimit:"380",
-          lowerlimit:"240",
+          upperlimit: "380",
+          lowerlimit: "240",
         },
-        orpTemp:{
-          title:"Temp",
-          max:"35",
-          min:"22",
+        orpTemp: {
+          title: "Temp",
+          max: "35",
+          min: "22",
           currentValue: "",
-          upperlimit:"32",
-          lowerlimit:"25",
+          upperlimit: "32",
+          lowerlimit: "25",
         },
-        orpPh:{
-          title:"Ph",
-          max:"14",
-          min:"0",
+        orpPh: {
+          title: "Ph",
+          max: "14",
+          min: "0",
           currentValue: "",
-          upperlimit:"9.5",
-          lowerlimit:"4.5",
+          upperlimit: "9.5",
+          lowerlimit: "4.5",
         },
-        mppOrp:{
-          title:"ORP",
-          max:"1400",
-          min:"0",
+        mppOrp: {
+          title: "ORP",
+          max: "1400",
+          min: "0",
           currentValue: "",
-          upperlimit:"380",
-          lowerlimit:"240",
+          upperlimit: "380",
+          lowerlimit: "240",
         },
-        mppTemp:{
-          title:"Temp",
-          max:"35",
-          min:"22",
+        mppTemp: {
+          title: "Temp",
+          max: "35",
+          min: "22",
           currentValue: "",
-          upperlimit:"32",
-          lowerlimit:"25",
+          upperlimit: "32",
+          lowerlimit: "25",
         },
-        mppPh:{
-          title:"Ph",
-          max:"14",
-          min:"0",
+        mppPh: {
+          title: "Ph",
+          max: "14",
+          min: "0",
           currentValue: "",
-          upperlimit:"9.5",
-          lowerlimit:"4.5",
+          upperlimit: "9.5",
+          lowerlimit: "4.5",
         },
-        mppSal:{
-          title:"Salinity",
-          max:"32",
-          min:"0",
+        mppSal: {
+          title: "Salinity",
+          max: "32",
+          min: "0",
           currentValue: "",
-          upperlimit:"25",
-          lowerlimit:"18",
+          upperlimit: "25",
+          lowerlimit: "18",
         },
-        mppDO:{
-          title:"DO",
-          max:"14",
-          min:"0",
+        mppDO: {
+          title: "DO",
+          max: "14",
+          min: "0",
           currentValue: "",
-          upperlimit:"8",
-          lowerlimit:"4",
+          upperlimit: "8",
+          lowerlimit: "4",
+        },
+      },
+      currentR3: {
+        title: "R3",
+        orpOrp: {
+          title: "ORP",
+          max: "1400",
+          min: "0",
+          currentValue: "",
+          upperlimit: "380",
+          lowerlimit: "240",
+        },
+        orpTemp: {
+          title: "Temp",
+          max: "35",
+          min: "22",
+          currentValue: "",
+          upperlimit: "32",
+          lowerlimit: "25",
+        },
+        orpPh: {
+          title: "Ph",
+          max: "14",
+          min: "0",
+          currentValue: "",
+          upperlimit: "9.5",
+          lowerlimit: "4.5",
+        },
+        mppOrp: {
+          title: "ORP",
+          max: "1400",
+          min: "0",
+          currentValue: "",
+          upperlimit: "380",
+          lowerlimit: "240",
+        },
+        mppTemp: {
+          title: "Temp",
+          max: "35",
+          min: "22",
+          currentValue: "",
+          upperlimit: "32",
+          lowerlimit: "25",
+        },
+        mppPh: {
+          title: "Ph",
+          max: "14",
+          min: "0",
+          currentValue: "",
+          upperlimit: "9.5",
+          lowerlimit: "4.5",
+        },
+        mppSal: {
+          title: "Salinity",
+          max: "32",
+          min: "0",
+          currentValue: "",
+          upperlimit: "25",
+          lowerlimit: "18",
+        },
+        mppDO: {
+          title: "DO",
+          max: "14",
+          min: "0",
+          currentValue: "",
+          upperlimit: "8",
+          lowerlimit: "4",
         },
       },
     },
@@ -277,7 +277,7 @@ export default new Vuex.Store({
       state.commit("setORP1", random);
     },
     async setTemp1(state) {
-      const random = Math.floor((Math.random() * (34 - 20 + 1 )) + 20);
+      const random = Math.floor((Math.random() * (34 - 20 + 1)) + 20);
       state.commit("setTemp1", random);
     },
     async setPh1(state) {
@@ -292,13 +292,13 @@ export default new Vuex.Store({
       const random = Math.floor(Math.random() * 12);
       state.commit("setDo1", random);
     },
-    
+
     async setORP2(state) {
       const random = Math.floor(Math.random() * 1400);
       state.commit("setORP2", random);
     },
     async setTemp2(state) {
-      const random = Math.floor((Math.random() * (34 - 20 + 1 )) + 20);
+      const random = Math.floor((Math.random() * (34 - 20 + 1)) + 20);
       state.commit("setTemp2", random);
     },
     async setPh2(state) {
@@ -319,7 +319,7 @@ export default new Vuex.Store({
       state.commit("setORP3", random);
     },
     async setTemp3(state) {
-      const random = Math.floor((Math.random() * (34 - 20 + 1 )) + 20);
+      const random = Math.floor((Math.random() * (34 - 20 + 1)) + 20);
       state.commit("setTemp3", random);
     },
     async setPh3(state) {
@@ -332,19 +332,13 @@ export default new Vuex.Store({
     },
     async setDo3(state) {
       const random = Math.floor(Math.random() * 12);
-      state.commit("setDo2", random);
+      state.commit("setDo3", random);
     },
 
-    
+
   },
   modules: {},
   getters: {
-    // getCurrentORP: state => state.currentR1.orpOrp.currentValue,
-    // getCurrentTemp: state => state.currentR1.orpTemp.currentValue,
-    // getCurrentPh: state => state.currentR1.orpPh.currentValue,
-    // getCurrentSalinity: state => state.currentSalinity,
-    // getCurrentDO: state => state.currentDO,
     getCurrentR1: state => state.status,
-    // getPlusTen: state => state.currentR1.orpOrp.currentORP + 10,
   }
 });

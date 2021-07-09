@@ -3,31 +3,26 @@
     <apexchart
       ref="realtimeChart"
       type="area"
-      height="150"
+      height="190"
       :options="chartOptions"
       :series="series"
     ></apexchart>
-    <div>
+    <!-- <div>
       Upper Limit {{ title.upperlimit }} // <br>
       Lower Limit {{ title.lowerlimit }} //<br>
       Current Value {{ title.currentValue }} //<br>
       Max Value {{ title.max }}
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
-//import { Line } from "vue-chartjs";
 import VueApexCharts from "vue-apexcharts";
-import { mapGetters } from "vuex";
 
 export default {
   components: {
     apexchart: VueApexCharts,
   },
   props: ["title"],
-  computed: {
-    ...mapGetters({ getget: "getCurrentR1" }),
-  },
   data() {
     return {
       time: 1,

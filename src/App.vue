@@ -1,31 +1,24 @@
 <template>
-  <div id="app" class="row main">
-    <!-- <div class="row card">
-      <h5 style="text-align: center; color: white">ORP</h5>
-      <ORPDisplay class="product" />
-    </div>
-    <div class="row card">
-      <h5 style="text-align: center; color: white">MPP</h5>
-      <MPPDisplay class="product" />
-    </div> -->
-    <div v-for="item in getget" :key="item.status" class="row">
-      <h1>{{ item.title }}</h1>
-      <div class="row card">
-        {{ item.status }}
-        <h5 style="text-align: center; color: white">ORP</h5>
-        <ORP class="product" :title="item" />
+  <div id="app" class="main">
+    <div v-for="item in getget" :key="item.status">
+      <div>
+        <h1>{{ item.title }}</h1>
       </div>
-      <div class="row card">
-        <h5 style="text-align: center; color: white">MPP</h5>
-        <MPP class="product" :title="item" />
+      <div class="row">
+        <div class="row card">
+          <h5 style="text-align: center; color: white">ORP</h5>
+          <ORP class="product" :title="item" />
+        </div>
+        <div class="row card">
+          <h5 style="text-align: center; color: white">MPP</h5>
+          <MPP class="product" :title="item" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import ORPDisplay from "./components/ORP/ORPdisplay.vue";
-// import MPPDisplay from "./components/MPP/MPPdisplay.vue";
 import ORP from "./components/display/ORPdisplay.vue";
 import MPP from "./components/display/MPPdisplay.vue";
 import { mapGetters } from "vuex";
@@ -36,8 +29,6 @@ export default {
   components: {
     ORP,
     MPP,
-    // ORPDisplay,
-    // MPPDisplay,
   },
   methods: {
     ...mapActions(["setORP1"]),

@@ -1,5 +1,5 @@
 <template>
-  <div id="chart" >
+  <div id="chart">
     <apexchart
       ref="realtimeChart"
       type="radialBar"
@@ -18,7 +18,7 @@
           width: 55px;
         "
       >
-        {{title.min}}
+        {{ title.min }}
       </div>
       <div class="get-value">
         {{ title.currentValue }}
@@ -32,7 +32,7 @@
           width: 55px;
         "
       >
-        {{title.max}}
+        {{ title.max }}
       </div>
     </div>
   </div>
@@ -40,14 +40,10 @@
 
 <script>
 import VueApexCharts from "vue-apexcharts";
-import { mapGetters } from "vuex";
 export default {
-    props:['title'],
+  props: ["title"],
   components: {
     apexchart: VueApexCharts,
-  },
-  computed: {
-    ...mapGetters({ getget: "getCurrentR1" }),
   },
   data() {
     return {
@@ -67,7 +63,7 @@ export default {
             endAngle: 90,
             track: {
               background: "#ffffff",
-              strokeWidth: '100',
+              strokeWidth: "100",
               margin: 1, // margin is in pixels
             },
             dataLabels: {
@@ -95,13 +91,23 @@ export default {
   methods: {
     valueToPercent() {
       const max = this.title.max;
+      const min = this.title.min;
+      if (this.title.title == "Temp") {
+        if (this.title.currentValue > max) {
+          return 100;
+        }
+        return ((this.title.currentValue - min) / (max - min)) * 100;
+      }
       if (this.title.currentValue > max) {
         return 100;
       }
       return (this.title.currentValue / max) * 100;
     },
     updateColor() {
-      if (this.series > this.title.upperlimit || this.series < this.title.lowerlimit) {
+      if (
+        this.series > this.title.upperlimit ||
+        this.series < this.title.lowerlimit
+      ) {
         this.chartOptions = {
           fill: {
             colors: ["#f00"],

@@ -3,7 +3,6 @@
     <display :title="title.orpOrp" />
     <display :title="title.orpTemp" />
     <display :title="title.orpPh" />
-    
   </div>
 </template>
 
@@ -13,7 +12,7 @@ export default {
   components: {
     display,
   },
-  props: [ "title"],
+  props: ["title"],
 };
 </script>
 <style>
