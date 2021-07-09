@@ -1,23 +1,23 @@
 <template>
   <div class="row">
-    {{title}}
+    <!-- <display :title="getget.mppOrp" />
+    <display :title="getget.mppTemp" />
+    <display :title="getget.mppPh" />
+    <display :title="getget.mppSal" />
+    <display :title="getget.mppDO" /> -->
     <display :title="title" />
-    <!-- <display :title="title.mppOrp" />
-    <display :title="title.mppTemp" />
-    <display :title="title.mppPh" />
-    <display :title="title.mppSal" />
-    <display :title="title.mppDO" /> -->
-    
+    {{title}}
   </div>
 </template>
 
 <script>
 import display from "./display.vue";
+
 export default {
   components: {
     display,
   },
-  props: [ "title"],
+props: [ "title"],
 };
 </script>
 <style>

@@ -10,22 +10,28 @@
     </div> -->
     <div class="row card">
       <h5 style="text-align: center; color: white">ORP</h5>
-      <display class="product" />
+      <ORP class="product" :title="getget"/>
     </div>
-
+    <div class="row card">
+      <h5 style="text-align: center; color: white">mpp</h5>
+      <MPP class="product" :title="getget"/>
+    </div>
   </div>
 </template>
 
 <script>
 // import ORPDisplay from "./components/ORP/ORPdisplay.vue";
 // import MPPDisplay from "./components/MPP/MPPdisplay.vue";
-import display from "./components/display/ORPdisplay.vue";
+import ORP from "./components/display/ORPdisplay.vue";
+import MPP from "./components/display/MPPdisplay.vue";
+import { mapGetters } from "vuex";
 import { mapActions } from "vuex";
 export default {
   name: "app",
-
+  props: [ "title"],
   components: {
-    display,
+    ORP,
+    MPP,
     // ORPDisplay,
     // MPPDisplay,
   },
@@ -35,6 +41,9 @@ export default {
     ...mapActions(["setPh"]),
     ...mapActions(["setSalinity"]),
     ...mapActions(["setDo"]),
+  },
+    computed: {
+    ...mapGetters({ getget: "getCurrentR1" }),
   },
   mounted() {
     this.setORP();

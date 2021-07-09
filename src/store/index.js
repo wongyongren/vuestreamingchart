@@ -6,103 +6,245 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    currentR1:{
-      orpOrp:{
-        title:"ORP",
-        max:"1400",
-        min:"0",
-        currentValue: "",
-        upperlimit:"380",
-        lowerlimit:"240",
-        current: "getCurrentORP",
+    status:{
+      currentR1:{
+        orpOrp:{
+          title:"ORP",
+          max:"1400",
+          min:"0",
+          currentValue: "",
+          upperlimit:"380",
+          lowerlimit:"240",
+        },
+        orpTemp:{
+          title:"Temp",
+          max:"35",
+          min:"22",
+          currentValue: "",
+          upperlimit:"32",
+          lowerlimit:"25",
+        },
+        orpPh:{
+          title:"Ph",
+          max:"14",
+          min:"0",
+          currentValue: "",
+          upperlimit:"9.5",
+          lowerlimit:"4.5",
+        },
+        mppOrp:{
+          title:"ORP",
+          max:"1400",
+          min:"0",
+          currentValue: "",
+          upperlimit:"380",
+          lowerlimit:"240",
+        },
+        mppTemp:{
+          title:"Temp",
+          max:"35",
+          min:"22",
+          currentValue: "",
+          upperlimit:"32",
+          lowerlimit:"25",
+        },
+        mppPh:{
+          title:"Ph",
+          max:"14",
+          min:"0",
+          currentValue: "",
+          upperlimit:"9.5",
+          lowerlimit:"4.5",
+        },
+        mppSal:{
+          title:"Salinity",
+          max:"32",
+          min:"0",
+          currentValue: "",
+          upperlimit:"25",
+          lowerlimit:"18",
+        },
+        mppDO:{
+          title:"DO",
+          max:"14",
+          min:"0",
+          currentValue: "",
+          upperlimit:"8",
+          lowerlimit:"4",
+        },
       },
-      orpTemp:{
-        title:"Temp",
-        max:"35",
-        min:"22",
-        currentValue: "",
-        upperlimit:"32",
-        lowerlimit:"25",
-        current: "getCurrentTemp"
+      currentR2:{
+        orpOrp:{
+          title:"ORP",
+          max:"1400",
+          min:"0",
+          currentValue: "",
+          upperlimit:"380",
+          lowerlimit:"240",
+        },
+        orpTemp:{
+          title:"Temp",
+          max:"35",
+          min:"22",
+          currentValue: "",
+          upperlimit:"32",
+          lowerlimit:"25",
+        },
+        orpPh:{
+          title:"Ph",
+          max:"14",
+          min:"0",
+          currentValue: "",
+          upperlimit:"9.5",
+          lowerlimit:"4.5",
+        },
+        mppOrp:{
+          title:"ORP",
+          max:"1400",
+          min:"0",
+          currentValue: "",
+          upperlimit:"380",
+          lowerlimit:"240",
+        },
+        mppTemp:{
+          title:"Temp",
+          max:"35",
+          min:"22",
+          currentValue: "",
+          upperlimit:"32",
+          lowerlimit:"25",
+        },
+        mppPh:{
+          title:"Ph",
+          max:"14",
+          min:"0",
+          currentValue: "",
+          upperlimit:"9.5",
+          lowerlimit:"4.5",
+        },
+        mppSal:{
+          title:"Salinity",
+          max:"32",
+          min:"0",
+          currentValue: "",
+          upperlimit:"25",
+          lowerlimit:"18",
+        },
+        mppDO:{
+          title:"DO",
+          max:"14",
+          min:"0",
+          currentValue: "",
+          upperlimit:"8",
+          lowerlimit:"4",
+        },
       },
-      orpPh:{
-        title:"Ph",
-        max:"14",
-        min:"0",
-        currentValue: "",
-        upperlimit:"9.5",
-        lowerlimit:"4.5",
-        current: "getCurrentPh"
-      },
-      mppOrp:{
-        title:"ORP",
-        max:"1400",
-        min:"0",
-        currentValue: "",
-        upperlimit:"380",
-        lowerlimit:"240",
-        current: "getCurrentORP"
-      },
-      mppTemp:{
-        title:"Temp",
-        max:"35",
-        min:"22",
-        currentValue: "",
-        upperlimit:"32",
-        lowerlimit:"25",
-        current: "getCurrentORP"
-      },
-      mppPh:{
-        title:"Ph",
-        max:"14",
-        min:"0",
-        currentValue: "",
-        upperlimit:"9.5",
-        lowerlimit:"4.5",
-        current: "getCurrentORP"
-      },
-      mppSal:{
-        title:"Salinity",
-        max:"32",
-        min:"0",
-        currentValue: "",
-        upperlimit:"25",
-        lowerlimit:"18",
-        current: "getCurrentORP"
-      },
-      mppDO:{
-        title:"DO",
-        max:"14",
-        min:"0",
-        currentValue: "",
-        upperlimit:"8",
-        lowerlimit:"4",
-        current: "getCurrentORP"
+      currentR3:{
+        orpOrp:{
+          title:"ORP",
+          max:"1400",
+          min:"0",
+          currentValue: "",
+          upperlimit:"380",
+          lowerlimit:"240",
+        },
+        orpTemp:{
+          title:"Temp",
+          max:"35",
+          min:"22",
+          currentValue: "",
+          upperlimit:"32",
+          lowerlimit:"25",
+        },
+        orpPh:{
+          title:"Ph",
+          max:"14",
+          min:"0",
+          currentValue: "",
+          upperlimit:"9.5",
+          lowerlimit:"4.5",
+        },
+        mppOrp:{
+          title:"ORP",
+          max:"1400",
+          min:"0",
+          currentValue: "",
+          upperlimit:"380",
+          lowerlimit:"240",
+        },
+        mppTemp:{
+          title:"Temp",
+          max:"35",
+          min:"22",
+          currentValue: "",
+          upperlimit:"32",
+          lowerlimit:"25",
+        },
+        mppPh:{
+          title:"Ph",
+          max:"14",
+          min:"0",
+          currentValue: "",
+          upperlimit:"9.5",
+          lowerlimit:"4.5",
+        },
+        mppSal:{
+          title:"Salinity",
+          max:"32",
+          min:"0",
+          currentValue: "",
+          upperlimit:"25",
+          lowerlimit:"18",
+        },
+        mppDO:{
+          title:"DO",
+          max:"14",
+          min:"0",
+          currentValue: "",
+          upperlimit:"8",
+          lowerlimit:"4",
+        },
       },
     },
   },
   mutations: {
     //syncrous
-    setR1(state, payload) {
-      state.currentR1 = payload;
+    setStatus(state, payload) {
+      state.status = payload;
     },
     setORP(state, payload) {
-      state.currentR1.orpOrp.currentValue = payload;
-      state.currentR1.mppOrp.currentValue = payload;
+      state.status.currentR1.orpOrp.currentValue = payload;
+      state.status.currentR1.mppOrp.currentValue = payload;
+      state.status.currentR2.orpOrp.currentValue = payload;
+      state.status.currentR2.mppOrp.currentValue = payload;
+      state.status.currentR3.orpOrp.currentValue = payload;
+      state.status.currentR3.mppOrp.currentValue = payload;
     },
     setTemp(state, payload) {
-      state.currentR1.orpTemp.currentValue = payload;
-      state.currentR1.mppTemp.currentValue = payload;
+      state.status.currentR1.orpTemp.currentValue = payload;
+      state.status.currentR1.mppTemp.currentValue = payload;
+      state.status.currentR2.orpTemp.currentValue = payload;
+      state.status.currentR2.mppTemp.currentValue = payload;
+      state.status.currentR3.orpTemp.currentValue = payload;
+      state.status.currentR3.mppTemp.currentValue = payload;
     },
     setPh(state, payload) {
-      state.currentR1.orpPh.currentValue = payload;
-      state.currentR1.mppPh.currentValue = payload;
+      state.status.currentR1.orpPh.currentValue = payload;
+      state.status.currentR1.mppPh.currentValue = payload;
+      state.status.currentR2.orpPh.currentValue = payload;
+      state.status.currentR2.mppPh.currentValue = payload;
+      state.status.currentR3.orpPh.currentValue = payload;
+      state.status.currentR3.mppPh.currentValue = payload;
     },
     setSalinity(state, payload) {
-      state.currentR1.mppSal.currentValue = payload;
+      state.status.currentR1.mppSal.currentValue = payload;
+      state.status.currentR2.mppSal.currentValue = payload;
+      state.status.currentR3.mppSal.currentValue = payload;
     },
     setDo(state, payload) {
-      state.currentR1.mppDO.currentValue = payload;
+      state.status.currentR1.mppDO.currentValue = payload;
+      state.status.currentR2.mppDO.currentValue = payload;
+      state.status.currentR3.mppDO.currentValue = payload;
     },
   },
   actions: {
