@@ -1,12 +1,10 @@
 <template>
-  <div class="row">
-    <!-- <display :title="getget.mppOrp" />
-    <display :title="getget.mppTemp" />
-    <display :title="getget.mppPh" />
-    <display :title="getget.mppSal" />
-    <display :title="getget.mppDO" /> -->
-    <display :title="title" />
-    {{title}}
+  <div class="row" >
+    <display :title="title.currentR1.mppOrp" />
+    <display :title="title.currentR1.mppTemp" />
+    <display :title="title.currentR1.mppPh" />
+    <display :title="title.currentR1.mppSal" />
+    <display :title="title.currentR1.mppDO" />
   </div>
 </template>
 

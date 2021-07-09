@@ -1,12 +1,8 @@
 <template>
   <div class="row">
-    {{title}}
-    <display :title="title" />
-    <!-- <display :title="title.mppOrp" />
-    <display :title="title.mppTemp" />
-    <display :title="title.mppPh" />
-    <display :title="title.mppSal" />
-    <display :title="title.mppDO" /> -->
+    <display :title="title.currentR1.orpOrp" />
+    <display :title="title.currentR1.orpTemp" />
+    <display :title="title.currentR1.orpPh" />
     
   </div>
 </template>
