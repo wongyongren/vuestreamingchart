@@ -277,7 +277,7 @@ export default new Vuex.Store({
     // getCurrentPh: state => state.currentR1.orpPh.currentValue,
     // getCurrentSalinity: state => state.currentSalinity,
     // getCurrentDO: state => state.currentDO,
-    getCurrentR1: state => state.currentR1,
+    getCurrentR1: state => state.status,
     // getPlusTen: state => state.currentR1.orpOrp.currentORP + 10,
   }
 });
