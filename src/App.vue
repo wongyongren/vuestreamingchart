@@ -31,60 +31,24 @@ export default {
     MPP,
   },
   methods: {
-    ...mapActions(["setORP1"]),
-    ...mapActions(["setTemp1"]),
-    ...mapActions(["setPh1"]),
-    ...mapActions(["setSalinity1"]),
-    ...mapActions(["setDo1"]),
+    
+    ...mapActions(["setStatus1","setStatus2","setStatus3"]),
 
-    ...mapActions(["setORP2"]),
-    ...mapActions(["setTemp2"]),
-    ...mapActions(["setPh2"]),
-    ...mapActions(["setSalinity2"]),
-    ...mapActions(["setDo2"]),
 
-    ...mapActions(["setORP3"]),
-    ...mapActions(["setTemp3"]),
-    ...mapActions(["setPh3"]),
-    ...mapActions(["setSalinity3"]),
-    ...mapActions(["setDo3"]),
   },
   computed: {
     ...mapGetters({ getget: "getCurrentR1" }),
   },
   mounted() {
-    this.setORP1();
-    this.setTemp1();
-    this.setPh1();
-    this.setSalinity1();
-    this.setDo1();
-    setInterval(this.setORP1, 20000);
-    setInterval(this.setTemp1, 20000);
-    setInterval(this.setPh1, 20000);
-    setInterval(this.setSalinity1, 20000);
-    setInterval(this.setDo1, 20000);
 
-    this.setORP2();
-    this.setTemp2();
-    this.setPh2();
-    this.setSalinity2();
-    this.setDo2();
-    setInterval(this.setORP2, 20000);
-    setInterval(this.setTemp2, 20000);
-    setInterval(this.setPh2, 20000);
-    setInterval(this.setSalinity2, 20000);
-    setInterval(this.setDo2, 20000);
-
-    this.setORP3();
-    this.setTemp3();
-    this.setPh3();
-    this.setSalinity3();
-    this.setDo3();
-    setInterval(this.setORP3, 20000);
-    setInterval(this.setTemp3, 20000);
-    setInterval(this.setPh3, 20000);
-    setInterval(this.setSalinity3, 20000);
-    setInterval(this.setDo3, 20000);
+    this.setStatus1();
+    setInterval(this.setStatus1, 20000);
+    
+    this.setStatus2();
+    setInterval(this.setStatus2, 20000);
+    
+    this.setStatus3();
+    setInterval(this.setStatus3, 20000);
   },
 };
 </script>

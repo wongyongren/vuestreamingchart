@@ -212,9 +212,16 @@ export default new Vuex.Store({
   },
   mutations: {
     //syncrous
-    setStatus(state, payload) {
+    setStatus1(state, payload) {
       state.status = payload;
     },
+    setStatus2(state, payload) {
+      state.status = payload;
+    },
+    setStatus3(state, payload) {
+      state.status = payload;
+    },
+
     setORP1(state, payload) {
       state.status.currentR1.orpOrp.currentValue = payload;
       state.status.currentR1.mppOrp.currentValue = payload;
@@ -272,69 +279,87 @@ export default new Vuex.Store({
   },
   actions: {
     //asyncronous
-    async setORP1(state) {
+    async setStatus1(state){
       const random = Math.floor(Math.random() * 1400);
       state.commit("setORP1", random);
-    },
-    async setTemp1(state) {
-      const random = Math.floor((Math.random() * (34 - 20 + 1)) + 20);
-      state.commit("setTemp1", random);
-    },
-    async setPh1(state) {
-      const random = Math.floor(Math.random() * 14);
-      state.commit("setPh1", random);
-    },
-    async setSalinity1(state) {
-      const random = Math.floor(Math.random() * 32);
-      state.commit("setSalinity1", random);
-    },
-    async setDo1(state) {
-      const random = Math.floor(Math.random() * 12);
-      state.commit("setDo1", random);
+      const random1 = Math.floor((Math.random() * (34 - 20 + 1)) + 20);
+      state.commit("setTemp1", random1);
+      const random2 = Math.floor(Math.random() * 14);
+      state.commit("setPh1", random2);
+      const random3 = Math.floor(Math.random() * 32);
+      state.commit("setSalinity1", random3);
+      const random4 = Math.floor(Math.random() * 12);
+      state.commit("setDo1", random4);
     },
 
-    async setORP2(state) {
+
+    async setStatus2(state){
       const random = Math.floor(Math.random() * 1400);
       state.commit("setORP2", random);
-    },
-    async setTemp2(state) {
-      const random = Math.floor((Math.random() * (34 - 20 + 1)) + 20);
-      state.commit("setTemp2", random);
-    },
-    async setPh2(state) {
-      const random = Math.floor(Math.random() * 14);
-      state.commit("setPh2", random);
-    },
-    async setSalinity2(state) {
-      const random = Math.floor(Math.random() * 32);
-      state.commit("setSalinity2", random);
-    },
-    async setDo2(state) {
-      const random = Math.floor(Math.random() * 12);
-      state.commit("setDo2", random);
+      const random1 = Math.floor((Math.random() * (34 - 20 + 1)) + 20);
+      state.commit("setTemp2", random1);
+      const random2 = Math.floor(Math.random() * 14);
+      state.commit("setPh2", random2);
+      const random3 = Math.floor(Math.random() * 32);
+      state.commit("setSalinity2", random3);
+      const random4 = Math.floor(Math.random() * 12);
+      state.commit("setDo2", random4);
     },
 
-    async setORP3(state) {
+    async setStatus3(state){
       const random = Math.floor(Math.random() * 1400);
       state.commit("setORP3", random);
-    },
-    async setTemp3(state) {
-      const random = Math.floor((Math.random() * (34 - 20 + 1)) + 20);
-      state.commit("setTemp3", random);
-    },
-    async setPh3(state) {
-      const random = Math.floor(Math.random() * 14);
-      state.commit("setPh3", random);
-    },
-    async setSalinity3(state) {
-      const random = Math.floor(Math.random() * 32);
-      state.commit("setSalinity3", random);
-    },
-    async setDo3(state) {
-      const random = Math.floor(Math.random() * 12);
-      state.commit("setDo3", random);
+      const random1 = Math.floor((Math.random() * (34 - 20 + 1)) + 20);
+      state.commit("setTemp3", random1);
+      const random2 = Math.floor(Math.random() * 14);
+      state.commit("setPh3", random2);
+      const random3 = Math.floor(Math.random() * 32);
+      state.commit("setSalinity3", random3);
+      const random4 = Math.floor(Math.random() * 12);
+      state.commit("setDo3", random4);
     },
 
+    // async setORP2(state) {
+    //   const random = Math.floor(Math.random() * 1400);
+    //   state.commit("setORP2", random);
+    // },
+    // async setTemp2(state) {
+    //   const random = Math.floor((Math.random() * (34 - 20 + 1)) + 20);
+    //   state.commit("setTemp2", random);
+    // },
+    // async setPh2(state) {
+    //   const random = Math.floor(Math.random() * 14);
+    //   state.commit("setPh2", random);
+    // },
+    // async setSalinity2(state) {
+    //   const random = Math.floor(Math.random() * 32);
+    //   state.commit("setSalinity2", random);
+    // },
+    // async setDo2(state) {
+    //   const random = Math.floor(Math.random() * 12);
+    //   state.commit("setDo2", random);
+    // },
+
+    // async setORP3(state) {
+    //   const random = Math.floor(Math.random() * 1400);
+    //   state.commit("setORP3", random);
+    // },
+    // async setTemp3(state) {
+    //   const random = Math.floor((Math.random() * (34 - 20 + 1)) + 20);
+    //   state.commit("setTemp3", random);
+    // },
+    // async setPh3(state) {
+    //   const random = Math.floor(Math.random() * 14);
+    //   state.commit("setPh3", random);
+    // },
+    // async setSalinity3(state) {
+    //   const random = Math.floor(Math.random() * 32);
+    //   state.commit("setSalinity3", random);
+    // },
+    // async setDo3(state) {
+    //   const random = Math.floor(Math.random() * 12);
+    //   state.commit("setDo3", random);
+    // },
 
   },
   modules: {},
